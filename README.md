@@ -23,7 +23,7 @@ npm run lint
 ### File structure 
 
 <div align="center">
-    <img src="/documentation/images/file_structure.png" width="400px">
+    <img src="/documentation/images/file_structure.png" width="880px">
 </div>
 
 ### Customize configuration
