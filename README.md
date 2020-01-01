@@ -1,4 +1,6 @@
-# schoolflow
+<div align="center">
+    <img src="/src/assets/images/schoolflow_logo.png" width="880px">
+</div>
 
 ## Project setup
 ```
