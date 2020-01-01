@@ -20,5 +20,11 @@ npm run build
 npm run lint
 ```
 
+### File structure 
+
+<div align="center">
+    <img src="/documentation/images/file_structure.png" width="400px">
+</div>
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
