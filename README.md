@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="/src/assets/images/schoolflow_logo.png" width="880px">
+    <img src="/src/assets/images/schoolflow_logo.png" width="500px">
 </div>
 
 ## Project setup
