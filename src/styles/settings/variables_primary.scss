@@ -1,0 +1,72 @@
+
+//1. Fonts
+//2. Color-settings
+//3. Border
+//4. Buttons
+//5. Menu
+
+
+// 1. Fonts
+
+/* -- font-family -- */
+$primary-font-title: 'Cabin Sketch', cursive;
+$secondary-font-title: 'Saira Semi Condensed', sans-serif;
+$primary-font-text: 'Comfortaa', cursive;
+
+/* -- Desktop font-size -- */
+
+/* Title */
+$small-desktop-title: 40px;
+$medium-desktop-title: 50px;
+$large-desktop-title: 60px;
+
+/* Text */
+$small-desktop-text: 12px;
+$medium-desktop-text: 15px;
+$large-desktop-title: 18px;
+
+/* Secondary titles*/
+
+$small-secondary-desktop-title: 15px;
+$medium-secondary-desktop-title: 18px;
+$large-secondary-desktop-title: 22px;
+
+
+/* -- Mobile font-size -- */
+
+/* Title */
+$small-mobile-title: 25px;
+$medium-mobile-title: 30px;
+$large-mobile-title: 40px;
+
+/* Text */
+$small-mobile-text: 12px;
+$medium-mobile-text: 15px;
+$large-mobile-title: 18px;
+
+/* Secondary titles*/
+
+$small-secondary-mobile-title: 15px;
+$medium-secondary-mobile-title: 18px;
+$large-secondary-mobile-title: 22px;
+
+/* -- 2. Color-settings -- */
+$primary-bg-color: #4E595F;
+$text-color: black;
+$secondary-text-color: white;
+$primary-box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+$primary-icon-color: white;
+$checkpoint-color: #25E8C8;
+$checkbox-bg-color: rgba(196, 196, 196, 0.5);
+
+/* -- 3. Border -- */
+$hr-border: 1px solid rgba(0, 0, 0, 0.1);
+
+/* -- 4. Buttons -- */
+$border-radius: 5px;
+$primary-button-color: #FF6978;
+$primary-button-text-color: #FF6978;
+
+/* -- 5. Menu -- */
+$primary-menu-title-size: 22px;
+$secondary-menu-title-size: 20px;
