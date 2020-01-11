@@ -67,4 +67,56 @@ class Products {
     printf("Error: %s. \n", $result->error);
     return false;
   }
+  public function update_product(){
+    $query = 'UPDATE ' . 
+    $this->table . '
+    SET
+    product_name = :product_name,
+    product_price = :product_price, 
+    description = :description
+    WHERE product_id = :product_id
+    ';
+
+    $result = $this->db->prepare($query); 
+
+    //Clean data
+    $this->product_name = htmlspecialchars(strip_tags($this->product_name));
+    $this->product_price = htmlspecialchars(strip_tags($this->product_price));
+    $this->description = htmlspecialchars(strip_tags($this->description));
+    $this->product_id = htmlspecialchars(strip_tags($this->product_id));
+
+    //Bind data 
+    $result->bindParam(':product_name', $this->product_name);
+    $result->bindParam(':product_price', $this->product_price);
+    $result->bindParam(':description', $this->description);
+    $result->bindParam(':product_id', $this->product_id);
+
+    //If something works
+    if($result->execute()) {
+      return true; 
+    }
+
+    //If something goes wrong 
+    printf("Error: %s. \n", $result->error);
+    return false;
+  }
+
+  public function delete_product() {
+    $query = 'DELETE FROM ' . $this->table . ' WHERE product_id = :product_id';
+
+    $result = $this->db->prepare($query); 
+
+    $this->product_id = htmlspecialchars(strip_tags($this->product_id));
+
+    $result->bindParam(':product_id', $this->product_id);
+
+      //If something works
+    if($result->execute()) {
+      return true; 
+    }
+
+    //If something goes wrong 
+    printf("Error: %s. \n", $result->error);
+    return false;
+  }
 }

@@ -6,6 +6,8 @@
       {{ product.product_name }}
       {{ product.product_price }}
       {{ product.description }}
+      <button @click="delete_product(product)">Delete {{ product.product_id }}</button>
+       <button @click="update_product()">Edit</button>
     </div>
  
     <!-- Visar en produkt-->
@@ -18,7 +20,7 @@
 
      <h2>{{ create_product_title }}</h2>
     <div style="background-color:white;">
-      <form>
+      <form @submit.prevent="create_product">
         <label>Product Name</label>
         <input type="text" name="product_name" v-model="product_name">
         <br>
@@ -28,7 +30,7 @@
         <label>Description</label>
         <input type="text" name="description" v-model="description">
         <br>
-        <input type="button" @click="create_product()" value="Skapa produkt">
+        <input type="submit" value="Skapa produkt">
       </form>
     </div>
   </div>
@@ -46,61 +48,77 @@ export default {
       create_product_title: 'Create Product', 
       product_name: "",
       product_price: "",
-      description: "",
-      app: window.APP
+      description: "", 
+      product_id: "",
+      products: []
     }
   }, 
-  mounted() {
-    //All products API
-    axios
+ 
+  methods: {
+
+    fetch_products: function () {
+      axios
       .get('http://localhost/Examensarbete/schoolflow/php/components/products/api/read.php')
       .then(response => (this.all_products = response.data ))
-      //Single Product API 
-    axios 
-      .get('http://localhost/Examensarbete/schoolflow/php/components/products/api/read_single.php?product_id=1')
-      .then(response => (this.single_product = response ))
-      
-  },
-  methods: {
-    create_product: function () {
-
-      let form_data = new form_data();
-
-      form_data.append('prduct_name', this.product_name)
-      form_data.append('product_price', this.product_price)
-      form_data.append('description', this.description)
-
-      let product = {};
-
-      form_data.forEach(function(value,key){
-        product[key] = value; 
-      })
-
-      axios ({
-        method: 'post',
-        url: ' http://localhost/Examensarbete/schoolflow/php/components/products/api/create.php',
-        data: form_data, 
-        config: {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        } 
-      })
-      .then(function() {
-       
-        app.product.push(product)
-        app.reset_form();
-      })
-      .catch(function(){
-        console.log("Produkt ej uppladdad")
-      })
+      .then(response => {
+                  this.products = response.data;
+              })
     },
 
-    reset_form: function () {
-      this.product_name = '',
-      this.product_price = '',
-      this.description = ''
+    fetch_single_product: function () {
+       axios 
+      .get('http://localhost/Examensarbete/schoolflow/php/components/products/api/read_single.php?product_id=3')
+      .then(response => (this.single_product = response ))
+      
+    },
+
+      create_product() {
+      axios.post('http://localhost/Examensarbete/schoolflow/php/components/products/api/create.php', {
+        product_name: this.product_name,
+        product_price: this.product_price,
+        description: this.description
+      }).then(response => {
+     
+        response
+        this.fetch_products();
+      }).catch(error => {
+        this.response = 'Error: ' + error.response.status
+      })
+      this.product_name = '';
+      this.product_price = '';
+      this.description = '';
+    },
+
+    update_product() {
+      let product_test = {'product_name': this.product_name, 'product_price': this.product_price, 'description': this.description}
+      console.log(product_test)
+  // console.log(obj)
+    },
+    delete_product() {
+
+
+      /*axios.delete(`http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${product.product_id}`)
+      .then(response => 
+      {       console.log(response)
+                this.fetch_products();
+            }
+           
+      )*/
+
+
+      
+      
+ 
+     
+        
     }
+  },
+   mounted() {
+    //All products API
+    
+  this.fetch_products();
+      //Single Product API 
+   this.fetch_single_product();
   }
 }
 </script>
