@@ -1,4 +1,9 @@
-.hello {
-  background-color: black;
-}
-@import 'components/test.scss';
+/* -- 1. Main settings -- */
+
+@import 'settings/variables_primary.scss';
+@import 'settings/main_settings.scss';
+
+/* -- 2. Components -- */
+
+@import 'components/header.scss';
+@import 'components/menu.scss';

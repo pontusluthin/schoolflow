@@ -1,5 +1,5 @@
 <template>
   <div>
-    om oss
+    Kontakta oss
   </div>
 </template>
