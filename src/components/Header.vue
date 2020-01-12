@@ -1,4 +1,5 @@
 <template>
+<div>
   <header class="header">
     
     <img class="schoolflow-logo" src=".././assets/schoolflow_logo.png" alt="">
@@ -14,16 +15,17 @@
     </div>
 
     <font-awesome-icon class="menu-button" @click.prevent="openMenu" icon="bars" />
-
+ </header>
     <nav class="menu" :class="{ 'show-menu' : isMobileMenuActive }">
-      <font-awesome-icon @click.prevent="closeMenu" icon="times-circle" />
-      <ul>
+      <font-awesome-icon @click.prevent="closeMenu" icon="times-circle" class="close-menu-button"/>
+      <a href="" class="log-in-menu-button">{{ log_in }}</a>
+      <ul class="parent-list">
         <li v-for="(link, index) in links" :key="link" @click="collapseItem(index, link)" class="item">      
-          <router-link :to="link.path">
-        <p class="item-name">{{ link.link_title }}</p>
+          <router-link :to="link.path" id="parent-link">
+          <p class="item-name">{{ link.link_title }}<font-awesome-icon icon="plus" class="parent-link-icon" /></p>
           <transition name="slide-fade">
-            <ul class="child-items" v-if="openedItems[index]">
-              <li class="child-item" v-for="child in link.children" :key="child">
+            <ul class="child-items" v-if="openedItems[index]" id="child-link">
+              <li class="child-item" v-for="child in link.children" :key="child" @click.prevent="closeMenu">
                 <router-link :to="child.path" @click.stop>
                   {{child.link_title}}
                 </router-link>
@@ -35,7 +37,7 @@
       </ul>
     </nav>
     
-  </header>
+  </div>
 </template>
 <script>
 export default {

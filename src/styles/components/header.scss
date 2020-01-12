@@ -6,7 +6,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  z-index: 2;
+  position: fixed;
+  top: 0;
   .schoolflow-logo {
     height: 45px;
     
@@ -47,89 +49,4 @@
       width: 22px;
     }
   }
-  body {
-    background-color: #F6F7FB;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  
-  a {
-    //color: white;
-    text-decoration: none;
-  }
-  
-  ul li {
-    list-style-type: none;
-  }
-  
-  #sidebar {
-    background: linear-gradient(#2595ec, #64DD17);
-    top: 0;
-    left: 0;
-    width: 275px;
-    height: 1000px;
-    position: absolute;
-    z-index: -1;
-    //color: #FFFFFF;
-    font-size: 14px;
-    display: grid;
-    grid-template-columns: 45px 155px 30px 45px;
-    grid-template-areas: ". items . ";
-    font-weight: bold;
-  }
-  
-  .sidebar-items {
-    padding-top: 100px;
-    grid-area: items;
-    margin-left: -40px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .item {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding-bottom: 10px;
-  }
-  
-  #item-icon {
-    width: 25px;
-    height: auto;
-    filter: invert(100%);
-    padding-top: 9px;
-    padding-right: 15px;
-    grid-area: item-icon;
-    float: left;
-  }
-  
-  .item-name {
-    grid-area: item-name;
-    position: static;
-    float: left;
-  }
-  
-  .child-items {
-    padding-top: 50px;
-    font-size: 12px;
-  }
-  
-  .child-item {
-    padding-bottom: 15px;
-    white-space: nowrap
-  }
-  
-  .slide-fade-enter-active {
-    transition: all .8s ease;
-  }
-  
-  .slide-fade-leave-active {
-    transition: all .3s cubic-bezier(0.5, 1.0, 0.8, 1.0);
-  }
-  
-  .slide-fade-enter,
-  .slide-fade-leave-to {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  
 }
