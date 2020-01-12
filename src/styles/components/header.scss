@@ -30,13 +30,11 @@
       letter-spacing: 0.07em;
       font-size: $small-secondary-desktop-title;
       background-color: $primary-button-color;
-      padding: 8px 0px 8px 26px;
+      padding: 6px 0px 6px 26px;
       border-radius: $border-radius;
-      border: 2px solid transparent;
       transition: ease-in-out 0.2s;
 
       &:hover{
-        border: 2px solid $primary-button-color;
         background-color: $secondary-text-color;
         color: $primary-button-color;
         cursor: pointer;
@@ -47,7 +45,7 @@
       }
 
       &.cart{
-        margin-right: 330px;
+        margin-right: 340px;
     
         svg {
           margin-left: 20px;
@@ -109,5 +107,25 @@
         position: relative;
       }
     }
+  }
+  .close-menu-button {
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    color: $secondary-text-color;
+    font-size: $medium-mobile-title;
+
+    @media screen and (min-width: 768px) {  
+      font-size: $large-secondary-desktop-title;
+      &:hover{
+        opacity: 0.7;
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .hide-button {
+    display: none;
   }
 }

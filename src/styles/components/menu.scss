@@ -9,14 +9,6 @@
   flex-direction: column;
   bottom: 0;
 
-  .close-menu-button {
-    margin-top: 70px;
-    position: absolute;
-    right: 0;
-    margin-right: 30px;
-    font-size: $medium-mobile-title;
-  
-  }
   .log-in-menu-button {
     color: $secondary-text-color;
     font-weight: bold;
@@ -30,6 +22,17 @@
     border-radius: $border-radius;
     font-size: $medium-mobile-text;
     font-family: $secondary-font-title;
+    border: 2px solid transparent;
+    transition: ease-in-out 0.2s;
+    
+    @media screen and (min-width: 768px) { 
+      &:hover{
+        border: 2px solid $primary-button-color;
+        background-color: $secondary-text-color;
+        color: $primary-button-color;
+        cursor: pointer;
+      }
+    }
   }
 
   a {
@@ -41,11 +44,17 @@
     margin-left: 10px;
     border-top: $hr-border;
     width: 80%;
-    padding-top: 20px;
     font-family: $secondary-font-title;
     font-weight: bold;
     font-size: $large-secondary-mobile-title;
     letter-spacing: 0.07em;
+    padding-inline-start: 0;
+
+    @media screen and (min-width: 768px) { 
+      width: 40%;
+      font-size: $medium-secondary-desktop-title;
+      padding-top: 0;
+    }
   }
 
   ul {
@@ -58,7 +67,9 @@
 
   .item {
     display: flex;
- 
+    border-bottom: $hr-border;
+    padding-bottom: 10px;
+     
   }
   
   .item-name {
@@ -71,17 +82,30 @@
     color: $text-color;
     margin-block-end: 10px;
 
+    @media screen and (min-width: 768px) { 
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
     .parent-link-icon{
       position: absolute;
       right: 0;
-      margin-right: 60px;
+      margin-right: 50px;
       color: $text-color;
       font-size: $medium-secondary-mobile-title;
+
+      @media screen and (min-width: 768px) { 
+        margin-right: 460px;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
     }
   }
   
   .child-items {
-    padding-top: 60px;
+    padding-top: 70px;
     padding-inline-start: 20px;
   
     a {
@@ -89,6 +113,15 @@
       font-family: $primary-font-title;
       font-size: $large-secondary-mobile-title;
       letter-spacing: 0.07em;
+      transition: ease-in-out 0.2s;
+
+      @media screen and (min-width: 768px) { 
+        font-size: $medium-secondary-desktop-title;
+        &:hover{
+          color: $text-color;
+          font-size: $large-secondary-desktop-title;
+        }
+      }
     }
   }
   
@@ -110,6 +143,8 @@
     transform: translateY(-10px);
     opacity: 0;
   }
-  
+  .hide-button {
+    display: none;
+  }
 }
 

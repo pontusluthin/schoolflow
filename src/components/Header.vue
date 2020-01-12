@@ -14,20 +14,24 @@
       <font-awesome-icon class="menu-button log-in" icon="key" />
     </div>
 
-    <font-awesome-icon class="menu-button" @click.prevent="openMenu" icon="bars" />
+    <font-awesome-icon class="menu-button" @click.prevent="openMenu" icon="bars" :class="{ 'hide-button' : isMobileMenuActive }"/>
+    <font-awesome-icon @click.prevent="closeMenu" icon="times-circle" class="close-menu-button" :class="{ 'hide-button' : !isMobileMenuActive }"/>
  </header>
     <nav class="menu" :class="{ 'show-menu' : isMobileMenuActive }">
-      <font-awesome-icon @click.prevent="closeMenu" icon="times-circle" class="close-menu-button"/>
       <a href="" class="log-in-menu-button">{{ log_in }}</a>
       <ul class="parent-list">
         <li v-for="(link, index) in links" :key="link" @click="collapseItem(index, link)" class="item">      
           <router-link :to="link.path" id="parent-link">
-          <p class="item-name">{{ link.link_title }}<font-awesome-icon icon="plus" class="parent-link-icon" /></p>
+          <p class="item-name">
+            {{ link.link_title }}
+            <font-awesome-icon icon="plus" class="parent-link-icon" :class="{'hide-button' : openedItems[index] }" />
+            <font-awesome-icon icon="minus" class="parent-link-icon" :class="{'hide-button' : !openedItems[index] }" />
+          </p>
           <transition name="slide-fade">
             <ul class="child-items" v-if="openedItems[index]" id="child-link">
               <li class="child-item" v-for="child in link.children" :key="child" @click.prevent="closeMenu">
                 <router-link :to="child.path" @click.stop>
-                  {{child.link_title}}1
+                  {{child.link_title}}
                 </router-link>
               </li>
             </ul>
