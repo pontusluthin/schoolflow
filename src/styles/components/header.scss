@@ -9,6 +9,7 @@
   z-index: 2;
   position: fixed;
   top: 0;
+  
   .schoolflow-logo {
     height: 45px;
     
@@ -19,7 +20,47 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: row;
+      position: absolute;
+      right: 0;
+      margin-right: 50px;
+      color: white;
+      font-family: $secondary-font-title;
+      font-weight: bold;
+      letter-spacing: 0.07em;
+      font-size: $small-secondary-desktop-title;
+      background-color: $primary-button-color;
+      padding: 8px 0px 8px 26px;
+      border-radius: $border-radius;
+      border: 2px solid transparent;
+      transition: ease-in-out 0.2s;
 
+      &:hover{
+        border: 2px solid $primary-button-color;
+        background-color: $secondary-text-color;
+        color: $primary-button-color;
+        cursor: pointer;
+
+        svg {
+          color: $primary-button-color;
+        }
+      }
+
+      &.cart{
+        margin-right: 330px;
+    
+        svg {
+          margin-left: 20px;
+        }
+      }
+
+      &.log-in {
+        margin-right: 150px;
+
+        svg {
+          margin-left: 20px;
+        }
+      }
     }
     .menu-button-name {
       display: none;
@@ -37,16 +78,36 @@
     position: relative;
     right: -150px;
 
+    @media screen and (min-width: 768px) {
+      height: 25px;
+      width: 25px;
+      right: 0;
+      position: absolute;
+      margin-right: 30px;
+
+     }
+     
+
     &.log-in {
       right: -105px;
-      height: 22px;
-      width: 22px;
+      height: 18px;
+      width: 18px;
+
+      @media screen and (min-width: 768px) { 
+        right: 0px;
+        position: relative;
+      }
     }
 
     &.cart {
       right: -85px;
-      height: 22px;
-      width: 22px;
+      height: 18px;
+      width: 18px;
+
+      @media screen and (min-width: 768px) { 
+        right: 0px;
+        position: relative;
+      }
     }
   }
 }

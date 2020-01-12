@@ -4,12 +4,12 @@
     
     <img class="schoolflow-logo" src=".././assets/schoolflow_logo.png" alt="">
     
-    <div class="menu-button-wrapper">
+    <div class="menu-button-wrapper cart">
       <div class="menu-button-name" >{{ shopping_cart }}</div>
       <font-awesome-icon class="menu-button cart" icon="shopping-cart" />
     </div>
 
-    <div class="menu-button-wrapper">
+    <div class="menu-button-wrapper log-in">
       <div class="menu-button-name" >{{ log_in }}</div>
       <font-awesome-icon class="menu-button log-in" icon="key" />
     </div>
@@ -27,7 +27,7 @@
             <ul class="child-items" v-if="openedItems[index]" id="child-link">
               <li class="child-item" v-for="child in link.children" :key="child" @click.prevent="closeMenu">
                 <router-link :to="child.path" @click.stop>
-                  {{child.link_title}}
+                  {{child.link_title}}1
                 </router-link>
               </li>
             </ul>
