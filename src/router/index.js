@@ -47,6 +47,27 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/Login.vue')
     }
+  },
+  {
+    path: '/svenska',
+    name: 'swedish',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Subjects/Swedish.vue')
+    }
+  },
+  {
+    path: '/matte',
+    name: 'math',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Subjects/Math.vue')
+    }
+  },
+  {
+    path: '/engelska',
+    name: 'english',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Subjects/English.vue')
+    }
   }
 ]
 
