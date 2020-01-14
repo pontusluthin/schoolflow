@@ -106,7 +106,7 @@ export default {
     //ändra delete_product(this.product_id)
     //url med $product_id ( js string literal)
     delete_product(product_id) {
-      axios.delete('http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${product_id}' )
+      axios.delete(´http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${product_id}´ )
       .then(response => 
       {       console.log("Product id " , response.data)
                 this.fetch_products();
