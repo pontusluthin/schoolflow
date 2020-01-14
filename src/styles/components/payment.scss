@@ -1,0 +1,275 @@
+.payment {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 768px) { 
+    flex-direction: row;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+  }
+
+  .payment-form {
+    width: 90%;
+
+    @media screen and (min-width: 768px) {
+      width: 35%;
+      margin-right: 80px;
+      padding: 40px 80px 40px 0;
+      border-right: $hr-border;
+    }
+
+    .form-title {
+      font-family: $primary-font-title;
+      font-weight: bold;
+      font-size: $medium-mobile-title;
+      letter-spacing: 0.07em;
+      margin-bottom: 20px;
+      margin-top: 30px;
+      border-bottom: $hr-border;
+      padding: 0 10px;
+    }
+
+    .field-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+      .field-title {
+        font-family: $secondary-font-title;
+        font-weight: bold;
+        letter-spacing: 0.07em;
+        font-size: $small-secondary-mobile-title;
+        margin-bottom: 5px;
+        margin-top: 20px;
+      }
+      
+    }
+    .aggreement {
+      margin-top: 30px;
+      font-family: $secondary-font-title;
+      font-weight: 200;
+      letter-spacing: 0.07em;
+      font-size: $small-mobile-text;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+
+      .field_a{
+        margin-right: 15px;
+    
+      }
+
+      .field_text {
+        @media screen and (min-width: 768px) {
+          &:hover {
+            cursor: pointer;
+          } 
+        }
+      }
+
+
+    input[type="checkbox"] { display: none; }
+
+      input[type="checkbox"] + label:before {
+        border-radius: $border-radius;
+        background-color: $checkbox-bg-color;
+        content: "\00a0";
+        display: block;
+        font: 25px/1em sans-serif;
+        height: 25px;
+        width: 25px;
+        margin: 0 15px 0 0;
+        float: left;
+     
+      }
+      input[type="checkbox"]:checked + label:before {
+        color: $checkpoint-color;
+        content: "\2713";
+        text-align: center;
+
+      }
+    }
+    .payment-submit-button {
+      background-color: $primary-button-color;
+      width: 269px;
+      height: 39px;
+      position: absolute;
+      margin-top: 370px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: $border-radius;
+      outline: none;
+      border: 2px solid $primary-button-color;
+      font-size: $large-mobile-text;
+      font-weight: bold;
+      color: $secondary-text-color;
+      margin-bottom: 50px;
+
+      @media screen and (min-width: 768px) { 
+        margin-top: 120px;
+        width: 350px;
+        transition: ease-in-out 0.2s;
+
+        &:hover {
+          border-color: $primary-button-color;
+          background-color: $secondary-text-color;
+          color: $primary-button-color;
+          cursor: pointer;
+          width: 1050px;
+        }
+      }
+    }
+  }
+
+  .shopping-cart {
+    @media screen and (min-width: 768px) { 
+      margin-top: -200px;
+    }
+
+    .payment-form {
+     
+      &.cart {
+        width: 90%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+      }
+
+      .product-sum-wrapper {
+        font-family: $secondary-font-title;
+        letter-spacing: 0.07em;
+
+        .product-name {
+          font-weight: bold;
+          font-size: $large-mobile-text;
+          position: relative;
+          margin-bottom: 10px;
+          margin-top: 10px;
+
+          span {
+            position: absolute;
+            right: 0;
+          }
+        }
+
+        .product-info {
+          font-size: $medium-mobile-text;
+          font-weight: 200;
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          border-bottom: $hr-border;
+          padding-bottom: 25px;
+
+          @media screen and (min-width: 768px) { 
+            margin-right: -100px;
+          }
+
+          span {
+            .product-num-field {
+              border: $hr-border;
+              border-radius: $border-radius;
+              width: 5%;
+              height: 20px;
+              width: 20px;
+              text-align: center;
+              margin-right: 5px;
+              margin-left: 50px;
+              outline: none;
+            }
+            
+          }
+          .delete-product-icon {
+            font-size: 20px;
+            margin-left: 30px;
+
+            @media screen and (min-width: 768px) { 
+              cursor: pointer;
+
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+        .product-sum-price  {
+          border-bottom: $hr-border;
+          margin-top: 20px;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+
+          .tax-price {
+            margin-bottom: 15px;
+            font-weight: 200;
+            position: relative;
+
+            span {
+              position: absolute;
+              right: 0;
+            }
+          }
+          .total-price {
+            font-weight: bold;
+            position: relative;
+
+            span {
+              position: absolute;
+              right: 0;
+            }
+          }
+        }
+      }
+
+      .field-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        
+      
+        .discount-field {
+          width: 40%;
+          margin-right: 10px;
+          
+        }
+        .submit-discount {
+          border: 2px solid $primary-button-color;
+          background-color: $primary-icon-color;
+          border-radius: $border-radius;
+          color: $primary-button-color;
+          width: 179px;
+          height: 38px;
+          font-size: $small-secondary-mobile-title;
+          font-weight: bold;
+          font-family: $secondary-font-title;
+
+          @media screen and (min-width: 768px) { 
+            transition: ease-in-out 0.2s;
+            width: 240px;
+            height: 32px;
+
+            &:hover {
+              background-color: $primary-button-color;
+              color: $secondary-text-color;
+              cursor: pointer;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  .input-clicked-border {
+    border: 2px solid $primary-button-color;
+  }
+}

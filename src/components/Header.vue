@@ -3,20 +3,18 @@
   <header class="header">
     
     <img class="schoolflow-logo" src=".././assets/schoolflow_logo.png" alt="">
-    
-    <div class="menu-button-wrapper cart">
-      <div class="menu-button-name" >{{ shopping_cart }}</div>
-      <font-awesome-icon class="menu-button cart" icon="shopping-cart" />
-    </div>
-
-    <div class="menu-button-wrapper log-in">
-      <div class="menu-button-name" >{{ log_in }}</div>
-      <font-awesome-icon class="menu-button log-in" icon="key" />
+    <div v-for="link in header_links" :key="link" @click.prevent="closeMenu">
+      <router-link class="menu-button-wrapper" :class="link.class" :to="link.path" style="text-decoration:none">
+        <div class="menu-button-name" >{{ link.name }}</div>
+        <font-awesome-icon class="menu-button cart" :icon="link.icon" />
+      </router-link>
     </div>
 
     <font-awesome-icon class="menu-button" @click.prevent="openMenu" icon="bars" :class="{ 'hide-button' : isMobileMenuActive }"/>
     <font-awesome-icon @click.prevent="closeMenu" icon="times-circle" class="close-menu-button" :class="{ 'hide-button' : !isMobileMenuActive }"/>
+
  </header>
+
     <nav class="menu" :class="{ 'show-menu' : isMobileMenuActive }">
       <a href="" class="log-in-menu-button">{{ log_in }}</a>
       <ul class="parent-list">
@@ -47,8 +45,21 @@
 export default {
   data() {
     return {
-      shopping_cart: 'Varukorg', 
-      log_in: 'Logga in', 
+      header_links: [
+        {
+          name: 'Varukorg', 
+          path: '/betalning', 
+          icon: 'shopping-cart', 
+          class: 'first'
+        },
+        {
+          name: 'Logga in', 
+          path: '/logga-in',
+          icon: 'key',
+          class: 'second'
+        }
+      ], 
+      log_in: 'Logga in',
       isMobileMenuActive: false,
       openedItems: {},
       links: [

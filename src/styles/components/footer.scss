@@ -6,6 +6,7 @@
   color: $secondary-text-color;
   padding: 30px 20px;
   margin-bottom: -150px;
+  display: none;
 
   @media screen and (min-width: 768px) { 
     padding: 0px 0px 40px 0px;

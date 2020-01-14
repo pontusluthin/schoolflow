@@ -33,6 +33,20 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/Contact.vue')
     }
+  },
+  {
+    path: '/betalning',
+    name: 'payment',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/PaymentPage.vue')
+    }
+  },
+  {
+    path: '/logga-in',
+    name: 'login',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    }
   }
 ]
 

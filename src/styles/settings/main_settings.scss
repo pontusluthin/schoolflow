@@ -2,3 +2,29 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.page {
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+
+.field {
+  border: $field-border;
+  border-radius: $border-radius;
+  width: 280px;
+  height: 35px;
+  font-size: $medium-secondary-mobile-title;
+  outline: none;
+  padding-left: 15px;
+
+  &:focus {
+    border: 2px solid $primary-button-color;
+  }
+ 
+  @media screen and (min-width: 768px) { 
+    height: 30px;
+    font-size: $small-secondary-desktop-title;
+    padding-left: 10px;
+
+  }
+}
