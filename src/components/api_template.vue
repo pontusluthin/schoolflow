@@ -90,20 +90,23 @@ export default {
     },
 
     update_product() {
+
+      axios.put(' http://localhost/Examensarbete/schoolflow/php/components/products/api/update.php', {params: {product_id:this.product_id}})
+      .then((response) => {
+        console.log(response)
+      })
       let product_test = {'product_name': this.product_name, 'product_price': this.product_price, 'description': this.description}
       console.log(product_test)
   // console.log(obj)
     },
     delete_product() {
-
-
-      /*axios.delete(`http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${product.product_id}`)
+      axios.delete('http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php',  {params: 3})
       .then(response => 
-      {       console.log(response)
+      {       console.log("Product id " , response.data)
                 this.fetch_products();
-            }
+       }
            
-      )*/
+      )
 
 
       
