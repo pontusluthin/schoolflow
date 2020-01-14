@@ -2,14 +2,13 @@
   <div class="hello">
     <h2 class="test">{{ all_products_title }}</h2>
     <!-- Visar alla produkter -->
+        <!-- Skriv så @click = "delete_product(product.product_id)" som nedan
+      som jag sa att delete_product() anropas direkt var inte rätt i denna sammanhang.
+      click anropar delete_product(product.product_id) det. -->
     <div v-for="product in all_products.data" :key="product" style="background-color:white">
       {{ product.product_name }}
       {{ product.product_price }}
       {{ product.description }}
-      
-      //Skriv så @click = "delete_product(product.product_id)" som nedan
-      //som jag sa att delete_product() anropas direkt var inte rätt i denna sammanhang.
-      // click anropar delete_product(product.product_id) det.
       <button @click="delete_product(product.product_id)">Delete {{ product.product_id }}</button>
        <button @click="update_product()">Edit</button>
     </div>
@@ -62,7 +61,7 @@ export default {
 
     fetch_products: function () {
       axios
-      .get('http://localhost/Examensarbete/schoolflow/php/components/products/api/read.php')
+      .get('http://localhost/Examensarbete/schoolflow/api')
       .then(response => (this.all_products = response.data ))
       .then(response => {
                   this.products = response.data;
@@ -71,14 +70,14 @@ export default {
 
     fetch_single_product: function () {
        axios 
-      .get('http://localhost/Examensarbete/schoolflow/php/components/products/api/read_single.php?product_id=3')
+      .get('http://localhost/Examensarbete/schoolflow/api/?product_id=3')
       .then(response => (this.single_product = response ))
      
       
     },
 
       create_product() {
-      axios.post('http://localhost/Examensarbete/schoolflow/php/components/products/api/create.php', {
+      axios.post('http://localhost/Examensarbete/schoolflow/api', {
         product_name: this.product_name,
         product_price: this.product_price,
         description: this.description
@@ -102,7 +101,8 @@ export default {
     //ändra delete_product(this.product_id)
     //url med $product_id ( js string literal)
     delete_product(product_id) {
-      axios.delete(`http:localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${product_id}` )
+      console.log(product_id)
+      axios.delete(`http:localhost/Examensarbete/schoolflow/api/${product_id}` )
       .then(response => 
       {       console.log(response)
                 this.fetch_products();
