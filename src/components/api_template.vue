@@ -6,7 +6,11 @@
       {{ product.product_name }}
       {{ product.product_price }}
       {{ product.description }}
-      <button @click="delete_product">Delete {{ product.product_id }}</button>
+      
+      //Skriv så @click = "delete_product(product.product_id)" som nedan
+      //som jag sa att delete_product() anropas direkt var inte rätt i denna sammanhang.
+      // click anropar delete_product(product.product_id) det.
+      <button @click="delete_product(product.product_id)">Delete {{ product.product_id }}</button>
        <button @click="update_product()">Edit</button>
     </div>
  
@@ -95,10 +99,10 @@ export default {
       console.log(product_test)
   // console.log(obj)
     },
-    delete_product() {
-
-
-      axios.delete(`http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${this.products.product_id}`)
+    //ändra delete_product(this.product_id)
+    //url med $product_id ( js string literal)
+    delete_product(product_id) {
+      axios.delete(`http:localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${product_id}` )
       .then(response => 
       {       console.log(response)
                 this.fetch_products();
