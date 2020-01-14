@@ -1,0 +1,284 @@
+.startpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .banner-title {
+    font-size: $medium-mobile-title;
+    font-family: $primary-font-title;
+    font-weight: bold;
+    letter-spacing: 0.07em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 35px;
+
+    @media screen and (min-width: 768px) { 
+      font-size: $medium-desktop-title;
+      width: 50%;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+  }
+  .banner-sub-title {
+    text-align: center;
+    width: 352px;
+    font-family: $primary-font-text;
+    letter-spacing: 0.07em;
+    font-size: $small-secondary-mobile-title;
+    font-weight: 300;
+    columns: #636363;
+    line-height: 33px;
+
+    @media screen and (min-width: 768px) { 
+      width: 60%;
+    }
+
+  }
+  .learn-more-button {
+    text-decoration: none;
+    letter-spacing: 0.07em;
+    font-family: $secondary-font-title;
+    font-weight: bold;
+    background-color: $primary-button-color;
+    color: $secondary-text-color;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    font-size: $small-secondary-mobile-title;
+    border: 2px solid transparent;
+    transition: ease-in-out 0.2s;
+ 
+
+    @media screen and (min-width: 768px) { 
+      padding: 10px 30px;
+      &:hover {
+        border-color: $primary-button-color;
+        background-color: $secondary-text-color;
+        color: $primary-button-color;
+        cursor: pointer;
+
+      }
+    }
+  }
+  .course-content {
+
+    @media screen and (min-width: 768px) { 
+      display: flex;
+      width: 85%;
+
+    }
+
+    .course-wrapper {
+      background: #FFFFFF;
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+      border-radius: $border-radius;
+      height: 750px;
+      margin: 0px 50px;
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: 768px) { 
+        margin: 0px 30px;
+        margin-bottom: 80px;
+        width: 40%;
+        transition: ease-in-out 0.2s;
+
+        &:hover {
+          box-shadow: 7px 7px 25px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      .course-image {
+        height: 180px;
+      }
+      .course-title {
+        font-family: $primary-font-title;
+        letter-spacing: 0.07em;
+        font-weight: bold;
+        font-size: $small-mobile-title;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 25px;
+
+        @media screen and (min-width: 768px) { 
+          font-size: 30px;
+        }
+      }
+
+      .course-text {
+        width: 80%;
+        line-height: 33px;
+        letter-spacing: 0.07em;
+        font-size: $small-mobile-text;
+        font-family: $primary-font-text;
+        font-weight: 300;
+        margin-bottom: 30px;
+
+      }
+
+      .course-checkpoints-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        border-top: $hr-border;
+        padding-top: 20px;
+        
+
+        .course-checkpoint {
+          margin: 10px 0;
+          letter-spacing: 0.07em;
+          font-family: $primary-font-text;
+          font-weight: 300;
+          font-size: $small-mobile-text;
+
+          .checkpoint-icon {
+            color: $checkpoint-color;
+            margin-right: 10px;
+          }
+        }
+      }
+      .read-more-button {
+        margin-top: 40px;
+        color: $primary-button-color;
+        border: 2px solid $primary-button-color;
+        padding: 7px 30px;
+        border-radius: $border-radius;
+        text-decoration: none;
+        font-family: $secondary-font-title;
+        font-weight: 600;
+        margin-bottom: 40px;
+
+        @media screen and (min-width: 768px) { 
+          transition: ease-in-out 0.2s;
+
+          &:hover {
+            background-color: $primary-button-color;
+            color: $secondary-text-color;
+          }
+        }
+      }
+    }
+  }
+  .schoolflow-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 105, 120, 0.048);
+    padding: 30px 0;
+    width: 100%;
+
+    .video-title {
+      font-family: $primary-font-title;
+      font-weight: bold;
+      font-size: $small-mobile-title;
+      letter-spacing: 0.07em;
+      text-align: center;
+
+      @media screen and (min-width: 768px) { 
+        font-size: 30px;
+      }
+    }
+    .video-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media screen and (min-width: 768px) { 
+        flex-direction: row;
+        margin-top: 40px;
+      }
+
+      .video-image {
+        height: 260px;
+
+        @media screen and (min-width: 768px) { 
+          height: 350px;
+        }
+      }
+
+      .video {
+        height: 229px;
+
+        @media screen and (min-width: 768px) { 
+          height: 350px;
+          margin-left: 60px;
+      
+        }
+      }
+    }
+  }
+  .usp-title {
+    font-family: $primary-font-title;
+    font-weight: bold;
+    font-size: $small-mobile-title;
+    letter-spacing: 0.07em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .usps-content {
+    border-left: $hr-border;
+    border-right: $hr-border;
+    margin: 0 40px;
+    padding-top: 40px;
+
+    @media screen and (min-width: 768px) { 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-top: $hr-border;
+      border-left: none;
+      border-right: none;
+      width: 70%;
+    }
+
+    .usp-wrapper {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &.first {
+        border-right: $hr-border;
+      }
+
+      &.third {
+        border-left: $hr-border;
+      }
+
+      .usp-image {
+        height: 150px;
+        margin-bottom: 30px;
+       
+      }
+
+      .usp-text {
+        margin-bottom: 30px;
+        font-family: $secondary-font-title;
+        font-weight: bold;
+        letter-spacing: 0.07em;
+        line-height: 24px;
+        text-align: center;
+        width: 80%;
+
+        &.first, &.second {
+          border-bottom: $hr-border;
+          padding-bottom: 40px;
+
+          @media screen and (min-width: 768px) { 
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
