@@ -6,7 +6,7 @@
       {{ product.product_name }}
       {{ product.product_price }}
       {{ product.description }}
-      <button @click="delete_product(product)">Delete {{ product.product_id }}</button>
+      <button @click="delete_product">Delete {{ product.product_id }}</button>
        <button @click="update_product()">Edit</button>
     </div>
  
@@ -69,6 +69,7 @@ export default {
        axios 
       .get('http://localhost/Examensarbete/schoolflow/php/components/products/api/read_single.php?product_id=3')
       .then(response => (this.single_product = response ))
+     
       
     },
 
@@ -90,30 +91,20 @@ export default {
     },
 
     update_product() {
-
-      axios.put(' http://localhost/Examensarbete/schoolflow/php/components/products/api/update.php', {params: {product_id:this.product_id}})
-      .then((response) => {
-        console.log(response)
-      })
       let product_test = {'product_name': this.product_name, 'product_price': this.product_price, 'description': this.description}
       console.log(product_test)
   // console.log(obj)
     },
     delete_product() {
-      axios.delete('http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php',  {params: 3})
+
+
+      axios.delete(`http://localhost/Examensarbete/schoolflow/php/components/products/api/delete.php/${this.products.product_id}`)
       .then(response => 
-      {       console.log("Product id " , response.data)
+      {       console.log(response)
                 this.fetch_products();
-       }
+            }
            
-      )
-
-
-      
-      
- 
-     
-        
+      )      
     }
   },
    mounted() {
