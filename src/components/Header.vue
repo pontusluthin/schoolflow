@@ -1,7 +1,6 @@
 <template>
 <div>
   <header class="header">
-    
     <img class="schoolflow-logo" src=".././assets/schoolflow_logo.png" alt="">
     <div v-for="link in header_links" :key="link" @click.prevent="closeMenu">
       <router-link class="menu-button-wrapper" :class="link.class" :to="link.path" style="text-decoration:none">
@@ -16,7 +15,7 @@
  </header>
 
     <nav class="menu" :class="{ 'show-menu' : isMobileMenuActive }">
-      <a href="" class="log-in-menu-button">{{ log_in }}</a>
+      <router-link to="/logga-in" class="log-in-menu-button">{{ log_in }}</router-link>
       <ul class="parent-list">
         <li v-for="(link, index) in links" :key="link" @click="collapseItem(index, link)" class="item">      
           <router-link :to="link.path" id="parent-link">
@@ -72,15 +71,15 @@ export default {
           link_title: 'Årskurser',
           children: [
             {
-              path: 'Arskurs1',
+              path: '/arskurs-1',
               link_title: 'Årskurs 1'
             },
             {
-              path: 'Arskurs2',
+              path: '/arskurs-2',
               link_title: 'Årskurs 2'
             },
             {
-              path: 'Arskurs3',
+              path: '/arskurs-3',
               link_title: 'Årskurs 3'
             }
           ]

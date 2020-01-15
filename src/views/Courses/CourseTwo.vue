@@ -1,15 +1,23 @@
 <template>
-  <div class="subject page">
+  <div class="courses page">
     <div class="subject-paths-wrapper">
-      <div v-for="subject in subjects" :key="subject">
-          <router-link class="subject-path" :class="subject.class" :to="subject.path">{{ subject.name }}</router-link>
+      <div v-for="course in courses" :key="course">
+          <router-link class="subject-path" :class="course.class" :to="course.path">{{ course.name }}</router-link>
       </div>
     </div>
-    <div class="title">{{ subject_title }}</div>
-    <div class="sub-title">{{ subject_sub_title }}</div>
-    <div class="info-wrapper" v-for="subject in subjects_info" :key="subject">
-      <img class="info-image" :src="subject.image" :alt="subject.image">
-      <div class="info-text">{{ subject.text }}</div>
+    <div class="title">{{ course_title }}</div>
+    <div class="sub-title">{{ course_sub_title }}</div>
+    <div class="info-wrapper" v-for="course in courses_info" :key="course">
+      <img class="info-image" :src="course.image" :alt="course.image">
+      <div class="info-text">{{ course.text }}</div>
+    </div>
+    <div class="subjects-content">
+      <div class="subject-title">{{ subject_title }}</div>
+      <div class="subjects-wrapper">
+        <div v-for="subject in subjects" :key="subject">
+          <router-link class="subject" :to="subject.path" >{{ subject.name }}</router-link>
+        </div>
+      </div>
     </div>
     <div class="usp-wrapper" v-for="usps in usps" :key="usps">
       <div class="usp-section">
@@ -35,32 +43,47 @@
 export default {
   data () {
     return {
-      subject_title: 'Engelska', 
-      subject_sub_title: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
+      course_title: 'Årskurs 2', 
+      course_sub_title: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
       
-      subjects: [
+      courses: [
         {
-          path: '/svenska',
-          name: 'Svenska', 
+          path: '/arskurs-1',
+          name: 'Årskurs 1', 
           class: ''
         },
         {
-          path: '/matte',
-          name: 'Matte', 
-          class: 'border'
+          path: '/arskurs-2',
+          name: 'Årskurs 2', 
+          class: 'border highlite'
         },
          {
-          path: '/engelska',
-          name: 'Engelska',
-          class: 'highlite'
+          path: '/arskurs-3',
+          name: 'Årskurs 3',
+          class: ''
         }
       ],
 
-      subjects_info: [
+      courses_info: [
         {
           image: require('../../assets/images/subjects/english.png'),
           text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
 
+        }
+      ],
+      subject_title: 'Vilka ämnen finns för årskurs 1 på Scoolflow?',
+      subjects: [
+        {
+          path: '/svenska', 
+          name: 'Svenska'
+        },
+        {
+          path: '/matte', 
+          name: 'Matte'
+        },
+        {
+          path: '/engelska', 
+          name: 'Engelska'
         }
       ],
       usps: [

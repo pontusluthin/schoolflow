@@ -50,9 +50,9 @@
     border: 2px solid transparent;
     transition: ease-in-out 0.2s;
  
-
     @media screen and (min-width: 768px) { 
       padding: 10px 30px;
+
       &:hover {
         border-color: $primary-button-color;
         background-color: $secondary-text-color;

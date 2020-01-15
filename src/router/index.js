@@ -68,6 +68,27 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/Subjects/English.vue')
     }
+  },
+  {
+    path: '/arskurs-1',
+    name: 'course_one',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Courses/CourseOne.vue')
+    }
+  },
+  {
+    path: '/arskurs-2',
+    name: 'course_two',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Courses/CourseTwo.vue')
+    }
+  },
+  {
+    path: '/arskurs-3',
+    name: 'course_three',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Courses/CourseThree.vue')
+    }
   }
 ]
 
