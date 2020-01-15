@@ -102,7 +102,7 @@ export default {
     //url med $product_id ( js string literal)
     delete_product(product_id) {
       console.log(product_id)
-      axios.delete(`http:localhost/Examensarbete/schoolflow/api/${product_id}` )
+      axios.delete(`http:localhost/Examensarbete/schoolflow/api/${product_id}`)
       .then(response => 
       {       console.log(response)
                 this.fetch_products();
