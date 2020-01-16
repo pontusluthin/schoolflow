@@ -89,6 +89,13 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/Courses/CourseThree.vue')
     }
+  },
+  {
+    path: '/inloggad',
+    name: 'customer_login',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/CustomerLogin.vue')
+    }
   }
 ]
 

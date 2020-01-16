@@ -5,6 +5,8 @@
 
 /* -- 2. Components -- */
 
+@import 'components/courses.scss';
+@import 'components/customerLogin.scss';
 @import 'components/footer.scss';
 @import 'components/header.scss';
 @import 'components/home.scss';
@@ -12,4 +14,4 @@
 @import 'components/menu.scss';
 @import 'components/payment.scss';
 @import 'components/subjects.scss';
-@import 'components/courses.scss';
+
