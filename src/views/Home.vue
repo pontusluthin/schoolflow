@@ -34,6 +34,12 @@
   </div>
 </template>
 <script>
+<<<<<<< HEAD
+=======
+// @ is an alias to /src
+import HelloWorld from '@/components/api_template.vue'
+
+>>>>>>> 20200107_basic_php_api_template
 export default {
   data () {
     return {
