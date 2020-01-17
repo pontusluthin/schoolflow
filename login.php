@@ -5,6 +5,7 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Methods: PUT');
 header('Access-Control-Allow-Methods: DELETE');
+
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
 include_once('php/db_connect.php');
@@ -22,7 +23,7 @@ switch ($method) {
     break;
   case 'POST':
     require_once('php/components/login/api/login.php');
-    require_once('php/components/login/api/create_user.php');
+    //require_once('php/components/login/api/create_user.php');
     break;
   case 'DELETE':
    

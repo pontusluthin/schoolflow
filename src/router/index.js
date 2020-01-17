@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import  Auth  from 'firebase';
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,9 @@ const routes = [
     name: 'payment',
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/PaymentPage.vue')
+    },   
+    meta: {
+      requiresAuth: true,
     }
   },
   {
@@ -96,5 +100,16 @@ const router = new VueRouter({
   mode: 'history', // Tar bort # från URL 
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(route => route.meta.requiresAuth)) {
+    if (Auth.currentUser) {
+      next();
+    } else {
+      next({ path: '/logga-in' });
+    }
+  }
+  next();
+});
 
 export default router
