@@ -20,12 +20,14 @@
         <input class="field" type="text">
       </div>
 
+      <input type="hidden" :value="customer_password">
+
       <div class="aggreement">
         <input id="checkbox" class="field_a" type="checkbox">
         <label for="checkbox" class="field_text">{{ checkbox_text }}</label>
       </div>
 
-      <input type="submit" value="Genomför betalning" class="payment-submit-button">
+      <input type="submit" @click.prevent="order"  value="Genomför betalning" class="payment-submit-button">
     </form>
 
     <div class="shopping-cart">
@@ -123,18 +125,29 @@ export default {
     },
 
       result: function(){
-       let vat = document.getElementById('total_price').value;
+        document.getElementById('total_price').value;
 
      
-
-      
-console.log(vat)
        
                
                     return this.firstNumber * this.secondNumber;
-                }
+                },
+
+                testo() {
+                  console.log('fungerar')
+                },
+
+                test() {
+          this.testo()
+      },
+
+      order () {
+        this.test()
+      } 
+      
     
    },
+   
    mounted() {
            this.getLocalStorage() 
            this.fetch_single_product()
