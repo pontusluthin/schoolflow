@@ -10,7 +10,7 @@
       {{ product.product_price }}
       {{ product.description }}
       <button @click="delete_product(product.product_id)">Delete {{ product.product_id }}</button>
-       <button @click="update_product()">Edit</button>
+       <button @click="update_product(product.product_id)">Edit</button>
     </div>
  
     <!-- Visar en produkt-->

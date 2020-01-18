@@ -5,25 +5,23 @@
     <div class="sub-title">{{ sub_title }}</div>
 
     <div class="product-flex">
-      <div class="product-content" v-for="products in all_products" :key="products">
-        <div class="product-title" :class="products.class">{{ products.title }}</div>
-        <div class="product-wrapper" :class="products.class">
-          <div class="flex-wrapper" v-for="product in products.product" :key="product">
-            <div class="product-text">{{ product.text }}</div>
+      <div class="product-content" v-for="p in products_content.data.slice(0,4)" :key="p">
+        <div class="product-title"> {{ p.name }}</div>
+        <div class="product-wrapper" >
+          <div class="flex-wrapper">
+            <div class="product-text">{{ p.description }}</div>
             <div class="price-wrapper">
-              <div class="product-price">{{ product.per_month_title }}<span class="price">{{ product.price_month }}</span><span class="country">{{ product.price_country_month }}</span></div>
-              <div class="product-price">{{ product.per_year_title }}<span class="price">{{ product.price_year }}</span><span class="country">{{ product.price_country_year }}</span></div>
+              <div class="product-price" v-if="p.month_price">Per månad<span class="price">{{ p.month_price }}</span><span class="country">KR</span></div>
             </div>
             <div class="buy-buttons">
-              <div :class="product.class">{{ product.month }}</div>
-              <div class="product-year">{{ product.year }}</div>
+              <div class="product-year" @click.prevent="addProduct(p.product_id)">Beställ</div>
             </div>
           </div>
         </div>
       </div>
     </div>
       <div class="usp-content">
-        <div class="usp" v-for="usps in all_products" :key="usps">
+        <div class="usp">
          <!-- <div v-for="usp in usps.product" :key="usp">
               
               <div class="usp-title"> {{ usp.usp_title }} </div>
@@ -42,7 +40,7 @@
 <script>
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
-
+import axios from 'axios';
 export default {
   name: 'home',
   components: {
@@ -51,179 +49,36 @@ export default {
   data() {
 
     return {
+      products_content: null,
       title: 'Prenumeration',
       sub_title: 'Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.',
-      all_products: [
-        {
-          title: 'Prova på', 
-          open_icon: 'plus',
-          close_icon: 'minus',
-          product: [
-            {
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
-              month: 'Prova på i 30 dagar',
-              class: 'product-month first',
-              year: 'Börja nu', 
-              usp_title: 'Detta ingår:',
-              usps: [
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          title: 'Liten', 
-          open_icon: 'plus',
-          close_icon: 'minus',
-          class: 'second-border',
-          product: [
-            {
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
-              month: 'Per månad',
-              class: 'product-month',
-              per_month_title: 'Per månad:',
-              price_month: '89',
-              price_country_month: 'kr',
-              per_year_title:'Helår:',
-              price_year: '999',
-              price_country_year: 'kr',
-              year: 'Helår', 
-              usp_title: 'Detta ingår:',
-              usps: [
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                }
-              ]  
-            }
-          ]
-        },
-        {
-          title: 'Mellan', 
-          open_icon: 'plus',
-          close_icon: 'minus',
-          class: 'third-border',
-          product: [
-            {
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
-              month: 'Per månad',
-              class: 'product-month',
-             per_month_title: 'Per månad:',
-              price_month: '149',
-              price_country_month: 'kr',
-              per_year_title:'Helår:',
-              price_year: '1299',
-              price_country_year: 'kr',
-              year: 'Helår', 
-              usp_title: 'Detta ingår:',
-              usps: [
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          title: 'Stor', 
-          open_icon: 'plus',
-          close_icon: 'minus',
-          product: [
-            {
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.',
-              month: 'Per månad',
-              class: 'product-month',
-              per_month_title: 'Per månad:',
-              price_month: '249',
-              price_country_month: 'kr',
-              per_year_title:'Helår:',
-              price_year: '1999',
-              price_country_year: 'kr',
-              year: 'Helår', 
-              usp_title: 'Detta ingår:',
-              usps: [
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                },
-                {
-                  check_icon:  'check',
-                  text: 'Cras mattis consectetur purus sit amet fermentum.'
-                }
-              ]
-            }
-          ]
-        }
-      ]
+     
     }
   },
 
   methods: {
-    
+
+    fetch_products: function () {
+    axios
+    .get('http://localhost/Examensarbete/schoolflow/api')
+    .then(response => (this.products_content = response.data))
+    },
+
+    addProduct(product_id){    
+      localStorage.setItem('product', product_id)
+      
+    },
+
+    getStorage(){
+      let storage = localStorage.getItem('product')
+      console.log(storage)
+    }
+   
   },
+   mounted() {
+  
+        this.fetch_products();
+        this.getStorage();
+    }
 }
 </script>

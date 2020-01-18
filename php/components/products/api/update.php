@@ -11,9 +11,10 @@
  $data = json_decode(file_get_contents("php://input"));
 
  $products->product_id = $data->product_id;
-
- $products->product_name = $data->product_name;
- $products->product_price = $data->product_price;
+ $products->name = $data->name;
+ $products->type = $data->type;
+ $products->month_price = $data->month_price;
+ $products->year_price = $data->year_price;
  $products->description = $data->description; 
 
  if($products->update_product()) {

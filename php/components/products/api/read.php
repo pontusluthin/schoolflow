@@ -20,8 +20,10 @@
   
       $product_item = array(
         'product_id'      =>  $product_id,
-        'product_name'    =>  $product_name,
-        'product_price'   =>  $product_price,
+        'name'            =>  $name,
+        'type'            =>  $type,
+        'month_price'   =>  $month_price,
+        'year_price'   =>  $year_price,
         'description'     =>  $description   
       );
   

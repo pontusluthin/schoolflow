@@ -40,10 +40,10 @@ const routes = [
     name: 'payment',
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/PaymentPage.vue')
-    },   
+    }/*,   
     meta: {
       requiresAuth: true,
-    }
+    }*/
   },
   {
     path: '/logga-in',

@@ -11,8 +11,10 @@ $products->read_single_product();
 
 $product_arr = array(
   'product_id' => $products->product_id, 
-  'product_name' => $products->product_name,
-  'product_price' => $products->product_price,
+  'name' => $products->name,
+  'type' => $products->type,
+  'month_price' => $products->month_price,
+  'year_price' => $products->year_price,
   'description' => $products->description
 );
 

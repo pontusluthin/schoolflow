@@ -6,8 +6,10 @@ class Products {
   private $table = 'Products';
 
   public $product_id;
-  public $product_name; 
-  public $product_price; 
+  public $name; 
+  public $type; 
+  public $month_price; 
+  public $year_price; 
   public $description; 
 
   public function __construct() {
@@ -32,8 +34,10 @@ class Products {
     
     $row = $result->fetch(PDO::FETCH_ASSOC);
 
-    $this->product_name = $row['product_name'];
-    $this->product_price = $row['product_price'];
+    $this->name = $row['name'];
+    $this->type = $row['type'];
+    $this->month_price = $row['month_price'];
+    $this->year_price = $row['year_price'];
     $this->description = $row['description'];
   }
 
@@ -41,21 +45,27 @@ class Products {
     $query = 'INSERT INTO ' . 
     $this->table . '
     SET
-    product_name = :product_name,
-    product_price = :product_price, 
+    name = :name,
+    type = :type,
+    month_price = :month_price, 
+    year_price = :year_price, 
     description = :description
     ';
 
     $result = $this->db->prepare($query); 
 
     //Clean data
-    $this->product_name = htmlspecialchars(strip_tags($this->product_name));
-    $this->product_price = htmlspecialchars(strip_tags($this->product_price));
+    $this->name = htmlspecialchars(strip_tags($this->name));
+    $this->type = htmlspecialchars(strip_tags($this->type));
+    $this->month_price = htmlspecialchars(strip_tags($this->month_price));
+    $this->year_price = htmlspecialchars(strip_tags($this->year_price));
     $this->description = htmlspecialchars(strip_tags($this->description));
 
     //Bind data 
-    $result->bindParam(':product_name', $this->product_name);
-    $result->bindParam(':product_price', $this->product_price);
+    $result->bindParam(':name', $this->name);
+    $result->bindParam(':type', $this->type);
+    $result->bindParam(':month_price', $this->month_price);
+    $result->bindParam(':year_price', $this->year_price);
     $result->bindParam(':description', $this->description);
 
     //If something works
@@ -71,8 +81,10 @@ class Products {
     $query = 'UPDATE ' . 
     $this->table . '
     SET
-    product_name = :product_name,
-    product_price = :product_price, 
+    name = :name,
+    type = :type,
+    month_price = :month_price, 
+    year_price = :year_price, 
     description = :description
     WHERE product_id = :product_id
     ';
@@ -80,14 +92,18 @@ class Products {
     $result = $this->db->prepare($query); 
 
     //Clean data
-    $this->product_name = htmlspecialchars(strip_tags($this->product_name));
-    $this->product_price = htmlspecialchars(strip_tags($this->product_price));
+    $this->name = htmlspecialchars(strip_tags($this->name));
+    $this->type = htmlspecialchars(strip_tags($this->type));
+    $this->month_price = htmlspecialchars(strip_tags($this->month_price));
+    $this->year_price = htmlspecialchars(strip_tags($this->year_price));
     $this->description = htmlspecialchars(strip_tags($this->description));
     $this->product_id = htmlspecialchars(strip_tags($this->product_id));
 
     //Bind data 
-    $result->bindParam(':product_name', $this->product_name);
-    $result->bindParam(':product_price', $this->product_price);
+    $result->bindParam(':name', $this->name);
+    $result->bindParam(':type', $this->type);
+    $result->bindParam(':month_price', $this->month_price);
+    $result->bindParam(':year_price', $this->year_price);
     $result->bindParam(':description', $this->description);
     $result->bindParam(':product_id', $this->product_id);
 

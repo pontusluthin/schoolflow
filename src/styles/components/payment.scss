@@ -200,34 +200,39 @@
             }
           }
         }
-        .product-sum-price  {
-          border-bottom: $hr-border;
-          margin-top: 20px;
-          padding-bottom: 10px;
-          margin-bottom: 20px;
+     
+      }
+      .product-sum-price  {
+        border-bottom: $hr-border;
+        font-family: $secondary-font-title;
+        margin-top: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
 
-          .tax-price {
-            margin-bottom: 15px;
-            font-weight: 200;
-            position: relative;
+        .tax-price {
+          margin-bottom: 15px;
+          font-weight: 200;
+          position: relative;
 
-            span {
-              position: absolute;
-              right: 0;
-            }
+          span {
+            position: absolute;
+            right: 0;
           }
-          .total-price {
-            font-weight: bold;
-            position: relative;
+        }
+        .total-price {
+          font-weight: bold;
+          position: relative;
 
-            span {
-              position: absolute;
-              right: 0;
+          span {
+            position: absolute;
+            right: 0;
+
+            .zero-value {
+              margin-right: 40px;
             }
           }
         }
       }
-
       .field-wrapper {
         display: flex;
         flex-direction: row;
