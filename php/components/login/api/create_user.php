@@ -1,16 +1,13 @@
 <?php
 
 // required headers
-header("Access-Control-Allow-Origin:  http://localhost/Examensarbete/schoolflow/api/");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 
 $user = new Users();
 
 $data = json_decode(file_get_contents("php://input"));
- 
+
+$user->customer_id = $data->customer_id;
 $user->first_name = $data->first_name;
 $user->last_name = $data->last_name;
 $user->customer_address = $data->customer_address;
@@ -21,6 +18,7 @@ $user->phone = $data->phone;
 $user->customer_password = $data->customer_password;
 
 if(
+  !empty($user->customer_id) &&
   !empty($user->first_name) &&
   !empty($user->last_name) &&
   !empty($user->customer_address) &&

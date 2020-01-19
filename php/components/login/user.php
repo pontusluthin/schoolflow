@@ -29,6 +29,7 @@ class Users{
     // insert query
     $query = "INSERT INTO " . $this->table . "
             SET
+                customer_id = :customer_id,
                 first_name = :first_name,
                 last_name = :last_name,
                 customer_address = :customer_address, 
@@ -36,12 +37,13 @@ class Users{
                 city = :city,
                 email = :email,
                 phone = :phone,
-                customer_password = :customer_password";
+                customer_password = :customer_password;";
 
     // prepare the query
     $result = $this->db->prepare($query);
 
     // sanitize
+    $this->customer_id=htmlspecialchars(strip_tags($this->customer_id));
     $this->first_name=htmlspecialchars(strip_tags($this->first_name));
     $this->last_name=htmlspecialchars(strip_tags($this->last_name));
     $this->customer_address=htmlspecialchars(strip_tags($this->customer_address));
@@ -52,6 +54,7 @@ class Users{
     $this->customer_password=htmlspecialchars(strip_tags($this->customer_password));
 
     // bind the values
+    $result->bindParam(':customer_id', $this->customer_id);
     $result->bindParam(':first_name', $this->first_name);
     $result->bindParam(':last_name', $this->last_name);
     $result->bindParam(':customer_address', $this->customer_address);
@@ -111,6 +114,7 @@ class Users{
         $this->city = $row['city'];
         $this->phone = $row['phone'];
         $this->customer_password = $row['customer_password'];
+        $this->checkbox = $row['checkbox'];
  
         // return true because email exists in the database
         return true;
