@@ -98,6 +98,7 @@
 </template>
 <script>
 import axios from 'axios';
+import emailjs from 'emailjs-com';
 export default {
    name: 'payment',
    computed: {
@@ -132,6 +133,7 @@ export default {
       phone_text: 'Telefonnummer',
       customer_password_text: 'Lösenord',
       customer_number: '',
+      order_number:'',
     
       checkbox_text: 'Jag godkänner härmed Schoolflows allmänna villkor och köpvillkor'
      }
@@ -155,9 +157,29 @@ export default {
       
     },
 
+  
+    sendEmail () {
+
+        var template_params = {
+        "email": this.email,
+        "name": this.first_name
+      }
+
+      var service_id = "default_service";
+      var template_id = "schoolflow_9PK785";
+        var user_id = "user_tJCMWjj0XtJIVRg6sT9S5";
+       
+      emailjs.send(service_id, template_id, template_params, user_id)
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+        }, (error) => {
+            console.log('FAILED...', error);
+        });
+    },
 
       create_order() {
         axios.post('http://localhost/Examensarbete/schoolflow/checkout', {
+          order_id: this.order_number,
           customer_id: this.customer_number,
           product_id: this.product_storage_id
       }).then(response => {
@@ -184,6 +206,7 @@ export default {
         response
         this.create_order()
         this.removeLocalStorage() 
+        this.sendEmail()
         
       }).catch(error => {
         this.response = 'Error: ' + error.response.status
@@ -203,12 +226,19 @@ export default {
         console.log(this.customer_number);
       },
 
+      order_num(){
+      let o_number = Math.ceil(Math.random()*100000)
+        this.order_number = o_number
+        console.log(this.order_number);
+      }
+
    },
    
    mounted(){
           this.getLocalStorage() 
            this.fetch_single_product()
            this.customer_num();
+           this.order_num();
    }
 }
 </script>

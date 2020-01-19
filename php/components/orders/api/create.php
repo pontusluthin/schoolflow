@@ -12,6 +12,7 @@
 
     $data = json_decode(file_get_contents("php://input"));
 
+    $order->order_id = $data->order_id;
     $order->customer_id = $data->customer_id;
     $order->product_id = $data->product_id;
 

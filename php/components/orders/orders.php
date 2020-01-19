@@ -41,6 +41,7 @@ class Order {
     $query = 'INSERT INTO ' . 
     $this->table . '
     SET
+    order_id = :order_id,
     customer_id = :customer_id,
     product_id = :product_id 
     ';
@@ -48,10 +49,12 @@ class Order {
     $result = $this->db->prepare($query); 
 
     //Clean data
+    $this->order_id = htmlspecialchars(strip_tags($this->order_id));
     $this->customer_id = htmlspecialchars(strip_tags($this->customer_id));
     $this->product_id = htmlspecialchars(strip_tags($this->product_id));
 
     //Bind data 
+    $result->bindParam(':order_id', $this->order_id);
     $result->bindParam(':customer_id', $this->customer_id);
     $result->bindParam(':product_id', $this->product_id);
    
