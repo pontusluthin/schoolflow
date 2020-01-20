@@ -63,8 +63,8 @@ export default {
       openedItems: {},
       links: [
        {
-          path: '/prenumerationer',
-          link_title: 'Prenumerationer'
+          path: '/priser',
+          link_title: 'Priser'
        },
        {
           path: '',

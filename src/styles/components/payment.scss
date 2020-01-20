@@ -9,7 +9,7 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 150px;
+    margin-top: 100px;
   }
 
   .payment-form {
@@ -131,6 +131,25 @@
       margin-top: -200px;
     }
 
+    .add-product-button {
+        text-decoration: none;
+        letter-spacing: 0.07em;
+        font-family: $secondary-font-title;
+        font-weight: bold;
+        color:$primary-button-color;
+        padding: 7px 0px;
+        width: 60%;
+        border-radius: $border-radius;
+        //margin-bottom: 70px;
+        font-size: $small-secondary-mobile-title;
+
+        @media screen and (min-width: 768px) { 
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+    }
+
     .payment-form {
      
       &.cart {
@@ -200,34 +219,39 @@
             }
           }
         }
-        .product-sum-price  {
-          border-bottom: $hr-border;
-          margin-top: 20px;
-          padding-bottom: 10px;
-          margin-bottom: 20px;
+     
+      }
+      .product-sum-price  {
+        border-bottom: $hr-border;
+        font-family: $secondary-font-title;
+        margin-top: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
 
-          .tax-price {
-            margin-bottom: 15px;
-            font-weight: 200;
-            position: relative;
+        .tax-price {
+          margin-bottom: 15px;
+          font-weight: 200;
+          position: relative;
 
-            span {
-              position: absolute;
-              right: 0;
-            }
+          span {
+            position: absolute;
+            right: 0;
           }
-          .total-price {
-            font-weight: bold;
-            position: relative;
+        }
+        .total-price {
+          font-weight: bold;
+          position: relative;
 
-            span {
-              position: absolute;
-              right: 0;
+          span {
+            position: absolute;
+            right: 0;
+
+            .zero-value {
+              margin-right: 40px;
             }
           }
         }
       }
-
       .field-wrapper {
         display: flex;
         flex-direction: row;
@@ -272,4 +296,102 @@
   .input-clicked-border {
     border: 2px solid $primary-button-color;
   }
+
+  .modal-bg {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .order-modal {
+    background: $primary-bg-color;
+    position: fixed;
+    padding: 30px;
+    margin-top: -340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+    @media screen and (min-width: 768px) { 
+      margin-top: -200px;
+      width: 30%;
+    }
+
+    .schoolflow-logo {
+      height: 80px;
+
+      @media screen and (min-width: 768px) { 
+        height: 90px;
+      }
+    }
+
+    .modal-text {
+      background-color: white;
+      font-family: $secondary-font-title;
+      letter-spacing: 0.07em;
+      line-height: 28px;
+      text-align: center;
+      font-size: $large-mobile-text;
+      padding: 40px 10px;
+      font-weight: 300;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: 768px) { 
+        font-size: $medium-desktop-text;
+        padding: 40px 20px;
+      }
+
+     
+
+      .name {
+        font-size: $large-secondary-mobile-title;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: 768px) { 
+          font-size: $medium-secondary-desktop-title;
+        }
+      }
+
+      .mail {
+        border-top: $hr-border;
+        border-bottom: $hr-border;
+        margin: 0 10px;
+        margin-bottom: 15px;
+        padding: 20px 0;
+      }
+
+      .button {
+        text-decoration: none;
+        letter-spacing: 0.07em;
+        font-family: $secondary-font-title;
+        font-weight: bold;
+        background-color: $primary-button-color;
+        color: $secondary-text-color;
+        padding: 7px 0px;
+        width: 60%;
+        border-radius: $border-radius;
+        margin-top: 40px;
+        //margin-bottom: 70px;
+        font-size: $small-secondary-mobile-title;
+        @media screen and (min-width: 768px) { 
+          padding: 5px 0px;
+          width: 40%;
+        }
+      }
+    }
+  }
+
+  .show {
+    visibility: visible
+  }
+  .hide {
+      visibility: hidden
+    }
 }

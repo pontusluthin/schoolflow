@@ -2,6 +2,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import VueAxios from 'vue-axios'
+import axios from 'axios'
 
 /* -- Components -- */
 import Footer from './components/Footer'
@@ -25,6 +27,9 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 /* End Font Awesome */
 
 Vue.config.productionTip = false
+
+
+Vue.use(VueAxios, axios)
 
 new Vue({
   router, 
