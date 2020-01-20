@@ -89,7 +89,7 @@
       <img class="schoolflow-logo" src=".././assets/schoolflow_logo.png" alt="">
       <div class="modal-text">
           <div class="name">Vad rolig {{ first_name }} att du har valt Schoolflow! </div>
-          <div class="mail">Vi kommer strax att skicka en beställningsbekräftelse samt inloggninsupgifter till: {{ email }} </div>
+          <div class="mail">Vi kommer strax att skicka en beställningsbekräftelse till: {{ email }} </div>
           <div class="support">Har du några frågor redan nu är du varmt välkommen att höra av dig till: support@schoolflow.se</div>
           <router-link  @click.prevent="close_modal" to="/" class="button">Stäng fönster</router-link>
       </div>
@@ -99,6 +99,7 @@
 <script>
 import axios from 'axios';
 import emailjs from 'emailjs-com';
+import moment from 'moment';
 export default {
    name: 'payment',
    computed: {
@@ -134,6 +135,9 @@ export default {
       customer_password_text: 'Lösenord',
       customer_number: '',
       order_number:'',
+      product_price: '',
+      pay_date: '',
+      ocr: '',
     
       checkbox_text: 'Jag godkänner härmed Schoolflows allmänna villkor och köpvillkor'
      }
@@ -146,8 +150,11 @@ export default {
      fetch_single_product: function () {
        axios 
       .get('http://localhost/Examensarbete/schoolflow/api/?product_id='+ this.product_storage_id)
-      .then(response => (this.single_product = response.data ))
-
+      .then((response) => {
+        this.single_product = response.data 
+        this.product_price = response.data.month_price
+        })
+        
     },
 
     removeLocalStorage() {
@@ -162,7 +169,11 @@ export default {
 
         var template_params = {
         "email": this.email,
-        "name": this.first_name
+        "order_number": this.order_number,
+        "name": this.first_name,
+        "price": this.product_price,
+        "pay_date": this.pay_date,
+        "ocr": this.ocr
       }
 
       var service_id = "default_service";
@@ -223,22 +234,32 @@ export default {
       customer_num(){
         let c_number = Math.ceil(Math.random()*100000)
         this.customer_number = c_number
-        console.log(this.customer_number);
       },
 
       order_num(){
-      let o_number = Math.ceil(Math.random()*100000)
+        let o_number = Math.ceil(Math.random()*100000)
         this.order_number = o_number
-        console.log(this.order_number);
-      }
+      },
 
+      ocr_num() {
+      let ocr_number = Math.ceil(Math.random()*100000000000)
+      this.ocr = ocr_number
+      },
+
+      last_pay_date() {
+        let date = moment().add(30, 'days').calendar();  
+        this.pay_date = date;
+
+      }
    },
    
    mounted(){
-          this.getLocalStorage() 
-           this.fetch_single_product()
-           this.customer_num();
-           this.order_num();
+    this.getLocalStorage() 
+    this.fetch_single_product()
+    this.customer_num();
+    this.order_num();
+    this.ocr_num();
+    this.last_pay_date();
    }
 }
 </script>
