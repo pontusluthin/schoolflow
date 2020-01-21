@@ -46,13 +46,6 @@ const routes = [
     }*/
   },
   {
-    path: '/logga-in',
-    name: 'login',
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Login.vue')
-    }
-  },
-  {
     path: '/svenska',
     name: 'swedish',
     component: function () {
@@ -99,6 +92,13 @@ const routes = [
     name: 'customer_login',
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/CustomerLogin.vue')
+    }
+  },
+  {
+    path: '/logga-in',
+    name: 'login',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/Login.vue')
     }
   }
 ]

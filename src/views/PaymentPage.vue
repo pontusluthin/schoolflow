@@ -41,8 +41,6 @@
         <input class="field" type="password"  v-model="customer_password">
       </div>
 
-      
-
       <div class="aggreement">
         <input id="checkbox" class="field_a" type="checkbox" v-model="checkbox">
         <label for="checkbox" class="field_text">{{ checkbox_text }}</label>

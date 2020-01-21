@@ -114,7 +114,6 @@ class Users{
         $this->city = $row['city'];
         $this->phone = $row['phone'];
         $this->customer_password = $row['customer_password'];
-        $this->checkbox = $row['checkbox'];
  
         // return true because email exists in the database
         return true;

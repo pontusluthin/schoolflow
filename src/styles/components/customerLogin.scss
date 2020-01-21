@@ -1,0 +1,370 @@
+.customer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.07em;
+
+  .title {
+    font-family: $primary-font-title;
+    font-size: $large-mobile-title;
+    font-weight: bold;
+    border-bottom: $hr-border;
+    padding: 0 10px;
+    margin-bottom: 25px;
+
+    @media screen and (min-width: 768px) { 
+      width: 80%;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 90px;
+    }
+  }
+
+  .customer-info-wrapper {
+    font-weight: 200;
+    letter-spacing: 0.07em;
+    font-family: $secondary-font-title;
+    width: 60%;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) { 
+      width: 65%;
+    }
+
+    .customer-name {
+      font-size: $large-secondary-mobile-title;
+      margin-bottom: 15px;
+
+      @media screen and (min-width: 768px) { 
+      font-size:$large-desktop-text;
+      margin-bottom: 20px;
+      }
+    }
+    .customer-address {
+      font-size: $medium-secondary-mobile-title;
+      margin-bottom: 10px;
+
+      @media screen and (min-width: 768px) { 
+        font-size:$medium-desktop-text;
+        margin-bottom: 15px;
+      }
+    }
+    .customer-contact {
+      font-size: $medium-secondary-mobile-title;
+
+      @media screen and (min-width: 768px) { 
+        font-size:$medium-desktop-text;
+      }
+    }
+  }
+
+  .change-form {
+    font-family: $secondary-font-title;
+    width: 75%;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 768px) { 
+      width: 65%;
+      margin-bottom: 40px;
+    }
+
+    .form_title {
+      font-weight: bold;
+      font-size: $large-secondary-mobile-title;
+      margin-bottom: 5px;
+
+      @media screen and (min-width: 768px) { 
+        font-size: $medium-secondary-desktop-title;
+      }
+    }
+
+    .field {
+      @media screen and (min-width: 768px) { 
+        float: left;
+      }
+    }
+    .save-button{
+      text-decoration: none;
+      font-family: $secondary-font-title;
+      font-weight: bold;
+      background-color: $primary-button-color;
+      color: $secondary-text-color;
+      padding: 10px 30px;
+      border-radius: $border-radius;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      font-size: $small-secondary-mobile-title;
+      border: none;
+
+      @media screen and (min-width: 768px) { 
+        font-size: $small-secondary-desktop-title;
+        padding: 8px 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 15px;
+        transition: ease-in-out 0.2s;
+        border: 2px solid transparent;
+        margin-bottom: 20px;
+
+        &:hover {
+          background-color: $secondary-text-color;
+          cursor: pointer;
+          color: $primary-button-text-color;
+          border: 2px solid $primary-button-text-color;
+        }
+      }
+    }
+    .form_sub_title {
+      font-weight: 200;
+
+      @media screen and (min-width: 768px) { 
+        width: 30%;
+        font-size: $medium-desktop-text;
+      }
+    } 
+  }
+
+    .change-customer-form {
+      font-family: $secondary-font-title;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 65px;
+
+      @media screen and (min-width: 768px) { 
+        width: 65%;
+      }
+
+      .form-title {
+        font-weight: bold;
+        font-size: $large-secondary-mobile-title;
+        margin-bottom: 5px;
+
+        @media screen and (min-width: 768px) { 
+          font-size: $medium-secondary-desktop-title;
+          margin-bottom: 10px;
+        }
+      }
+      .sub-title {
+        font-size: $medium-secondary-mobile-title;
+        font-weight: 200;
+        margin-bottom: 5px;
+
+        @media screen and (min-width: 768px) { 
+          font-size: $small-secondary-desktop-title;
+        }
+      }
+      .generate-password-button {
+        text-decoration: none;
+        font-family: $secondary-font-title;
+        font-weight: bold;
+        background-color: $secondary-text-color;
+        color: $primary-button-text-color;
+        border: 2px solid $primary-button-color;
+        padding: 10px 30px;
+        border-radius: $border-radius;
+        margin-top: 15px;
+        margin-bottom: 40px;
+        font-size: $small-secondary-mobile-title;
+
+        @media screen and (min-width: 768px) { 
+          padding: 8px 20px;
+          font-size: $small-desktop-text;
+          transition: ease-in-out 0.2s;
+
+          &:hover {
+            background-color: $primary-button-color;
+            color: $secondary-text-color;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .save-button {
+        text-decoration: none;
+        font-family: $secondary-font-title;
+        font-weight: bold;
+        background-color: $primary-button-color;
+        color: $secondary-text-color;
+        padding: 10px 30px;
+        border-radius: $border-radius;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        font-size: $small-secondary-mobile-title;
+        border: none;
+
+
+        @media screen and (min-width: 768px) { 
+          padding: 8px 30px;
+          border: 2px solid transparent;
+          transition: ease-in-out 0.2s;
+
+          &:hover {
+            background-color: $secondary-text-color;
+            cursor: pointer;
+            color: $primary-button-text-color;
+            border: 2px solid $primary-button-text-color;
+          }
+        }
+      }
+    }
+
+    .customer-product-info {
+      border-top: $hr-border;
+      width: 60%;
+      padding: 20px 40px;
+      font-family: $secondary-font-title;
+
+      @media screen and (min-width: 768px) { 
+        width: 30%;
+        margin-left: 550px;
+        margin-top: -800px;
+        border-top: none;
+        border-left: $hr-border;
+        padding-bottom: 550px;
+        padding-top: 70px;
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .name {
+        font-weight: bold;
+        font-size: $large-secondary-mobile-title;
+        margin-bottom: 15px;
+
+        @media screen and (min-width: 768px) { 
+          font-size: $medium-secondary-desktop-title;
+        }
+      }
+      .price {
+        font-size: $medium-secondary-mobile-title;
+        font-weight: 200;
+        margin-bottom: 8px;
+        @media screen and (min-width: 768px) { 
+          font-size: $small-secondary-desktop-title;
+        }
+      }
+  
+      .notice {
+        font-size: $medium-secondary-mobile-title;
+        font-weight: 200;
+        margin-bottom: 60px;
+
+        @media screen and (min-width: 768px) { 
+          margin-bottom: 80px;
+          font-size: $small-secondary-desktop-title;
+        }
+      }
+
+      .change-button {
+        display: none;
+
+        @media screen and (min-width: 768px) { 
+          text-decoration: none;
+          font-family: $secondary-font-title;
+          font-weight: bold;
+          background-color: $primary-button-color;
+          color: $secondary-text-color;
+          border-radius: $border-radius;
+          margin-top: 15px;
+          margin-bottom: 5px;
+          font-size: $small-secondary-mobile-title;
+          padding: 8px 30px;
+          border: 2px solid transparent;
+          transition: ease-in-out 0.2s;
+          display: block;
+
+          &:hover {
+            background-color: $secondary-text-color;
+            cursor: pointer;
+            color: $primary-button-text-color;
+            border: 2px solid $primary-button-text-color;
+          }
+        }
+      }
+
+      .notice-button {
+        display: none;
+
+        @media screen and (min-width: 768px) { 
+          transition: ease-in-out 0.2s;
+          font-size: $small-desktop-text;
+          text-decoration: none;
+          font-family: $secondary-font-title;
+          font-weight: bold;
+          background-color: $secondary-text-color;
+          color: $primary-button-text-color;
+          border: 2px solid $primary-button-color;
+          padding: 7px 20px;
+          border-radius: $border-radius;
+          margin-top: 15px;
+          margin-bottom: 40px;
+          display: block;
+
+          &:hover {
+            background-color: $primary-button-color;
+            color: $secondary-text-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .order-history-section {
+      width: 80%;
+      font-family: $secondary-font-title;
+      font-size: $medium-secondary-mobile-title;
+      border-bottom: $hr-border;
+      padding-bottom: 15px;
+
+      @media screen and (min-width: 768px) { 
+
+      }
+     
+      .title {
+        font-family: $primary-font-title;
+        font-size: $small-mobile-title;
+        font-weight: bold;
+        border-bottom: $hr-border;
+        padding: 5px 10px;
+        margin-bottom: 25px;
+        text-align: center;
+
+
+        @media screen and (min-width: 768px) { 
+          text-align: left;
+          padding-bottom: 15px;
+          font-size: $small-desktop-title;
+          width: 98%;
+        }
+      }
+
+      .wrapper {
+        @media screen and (min-width: 768px) { 
+          display: flex;
+          flex-direction: row;
+          font-size: $small-secondary-desktop-title;
+        }
+        .name {
+          padding: 0 40px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          
+        }
+        .price {
+          padding: 0 40px;
+          margin-bottom: 10px;
+          font-weight: 200;
+        }
+        .date {
+          padding: 0 40px;
+          margin-bottom: 10px;
+          font-weight: 200;
+        }
+      }
+    }
+}

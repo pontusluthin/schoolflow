@@ -9,13 +9,15 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 
 include_once('php/db_connect.php');
 include_once('php/components/login/user.php');
+include_once('php/components/customer/customer.php');
 
 $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
   case 'GET':
     $data = $_GET;
-
-    if (isset ($data ['customer_id'])){
+   
+    if (isset ($data ['email'])){
+      require_once('php/components/customer/api/read_single.php');
     }
     else {
     }
