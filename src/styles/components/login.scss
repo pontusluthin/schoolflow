@@ -1,81 +1,89 @@
-.login {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  top: 0;
-  bottom: 0;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
-  background-color: $secondary-text-color;
-  width: 359px;
-  height: 290px;
-  padding-bottom: 80px;
-  padding-top: 20px;
-  border-radius: $border-radius;
+.login-body {
+  height: 700px;
 
-  @media screen and (min-width: 768px) {  
-    width: 530px;
-  }
-  
-  .login-title {
-    font-family: $primary-font-title;
-    font-weight: bold;
-    letter-spacing: 0.07em;
-    font-size: $large-mobile-title;
-    margin-bottom: 20px;
+  @media screen and (min-width: 768px) { 
+    height: 800px;
   }
 
-  .field-wrapper {
+  .login {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-
-    .login-sub-title {
-      font-family: $secondary-font-title;
-      letter-spacing: 0.07em;
-      font-weight: 200;
-      font-size: $medium-secondary-mobile-title;
-      margin-bottom: 8px;
-      margin-top: 20px;
-
-      @media screen and (min-width: 768px) {  
-        font-size: $small-secondary-desktop-title;
-      }
-    }
-  }
-
-  .login-submit-buttom {
-    background-color: $primary-button-color;
-    width: 190px;
-    height: 39px;
+    align-items: center;
     position: absolute;
-    margin-top: 30px;
-    left: 0;
-    right: 0;
     margin-left: auto;
     margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    background-color: $secondary-text-color;
+    width: 359px;
+    height: 290px;
+    padding-bottom: 80px;
+    padding-top: 20px;
     border-radius: $border-radius;
-    outline: none;
-    border: 2px solid $primary-button-color;
-    font-size: $large-mobile-text;
-    font-weight: bold;
-    color: $secondary-text-color;
-    transition: ease-in-out 0.2s;
 
     @media screen and (min-width: 768px) {  
-      
-      &:hover {
-        border-color: $primary-button-color;
-        background-color: $secondary-text-color;
-        color: $primary-button-color;
-        cursor: pointer;
-        width: 350px;
+      width: 530px;
+    }
+    
+    .login-title {
+      font-family: $primary-font-title;
+      font-weight: bold;
+      letter-spacing: 0.07em;
+      font-size: $large-mobile-title;
+      margin-bottom: 20px;
+    }
+
+    .field-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .login-sub-title {
+        font-family: $secondary-font-title;
+        letter-spacing: 0.07em;
+        font-weight: 200;
+        font-size: $medium-secondary-mobile-title;
+        margin-bottom: 8px;
+        margin-top: 20px;
+
+        @media screen and (min-width: 768px) {  
+          font-size: $small-secondary-desktop-title;
+        }
+      }
+    }
+
+    .login-submit-buttom {
+      background-color: $primary-button-color;
+      width: 190px;
+      height: 39px;
+      position: absolute;
+      margin-top: 30px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: $border-radius;
+      outline: none;
+      border: 2px solid $primary-button-color;
+      font-size: $large-mobile-text;
+      font-weight: bold;
+      color: $secondary-text-color;
+      transition: ease-in-out 0.2s;
+
+      @media screen and (min-width: 768px) {  
+        
+        &:hover {
+          border-color: $primary-button-color;
+          background-color: $secondary-text-color;
+          color: $primary-button-color;
+          cursor: pointer;
+          width: 350px;
+        }
       }
     }
   }

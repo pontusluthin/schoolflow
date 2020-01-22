@@ -1,4 +1,5 @@
 <template>
+<div class="login-body">
   <div class="login page">
     <div class="login-title">{{ login_title }}</div>
     <form>
@@ -18,6 +19,7 @@
     </form>
      <div class="error-modal">{{error_msg}}</div>
   </div>
+</div>
 </template>
 <script>
 import axios from 'axios';
