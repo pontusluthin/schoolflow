@@ -12,15 +12,16 @@
         <label class="login-sub-title">{{ password_title }}</label>
         <input type="password" class="field" v-model="customer_password">
       </div>
-      <div>{{error_msg}}</div>
+     
       <input type="submit" class="login-submit-buttom"  @click.prevent="login" value="Logga in">
 
     </form>
+     <div class="error-modal">{{error_msg}}</div>
   </div>
 </template>
 <script>
 import axios from 'axios';
-import router from '../router/index';
+//import router from '../router/index';
 
 
 
@@ -41,9 +42,7 @@ export default {
   },
   methods: {
     
-    login () {    
-       
-                 
+    login () {               
                 let email = this.email   
                 let customer_password = this.customer_password    
               
@@ -52,13 +51,14 @@ export default {
                         email: email,    
                         customer_password: customer_password    
                     }    
-                    axios.post("http://localhost/Examensarbete/schoolflow/login/", data)    
+                    axios.post("http://api.schoolflow.pontusluthin.se/login/", data)    
                         .then((response) => {    
                             console.log("Logged in", response)  
-                            router.push({
+                         
+                            this.$router.push({
                               name: "customer_login",
                               params: {
-                                email: 'test'
+                                email: this.email
                               }
                             })  
                           

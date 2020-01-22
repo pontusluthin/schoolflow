@@ -11,6 +11,7 @@ $customer->read_single_customer();
 
 $customer_arr = array(
   'order_id' => $customer->order_id, 
+  'customer_id' => $customer->customer_id,
   'first_name' => $customer->first_name,
   'last_name' => $customer->last_name,
   'customer_address' => $customer->customer_address,

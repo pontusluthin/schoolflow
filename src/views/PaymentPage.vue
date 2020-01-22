@@ -147,7 +147,7 @@ export default {
 
      fetch_single_product: function () {
        axios 
-      .get('http://localhost/Examensarbete/schoolflow/api/?product_id='+ this.product_storage_id)
+      .get('http://api.schoolflow.pontusluthin.se/api/?product_id='+ this.product_storage_id)
       .then((response) => {
         this.single_product = response.data 
         this.product_price = response.data.month_price
@@ -187,7 +187,7 @@ export default {
     },
 
       create_order() {
-        axios.post('http://localhost/Examensarbete/schoolflow/checkout', {
+        axios.post('http://api.schoolflow.pontusluthin.se/checkout', {
           order_id: this.order_number,
           customer_id: this.customer_number,
           product_id: this.product_storage_id
@@ -200,7 +200,7 @@ export default {
 
     create_customer() {
 
-      axios.post('http://localhost/Examensarbete/schoolflow/customer', {
+      axios.post('http://api.schoolflow.pontusluthin.se/customer', {
         customer_id: this.customer_number,
         first_name: this.first_name,
         last_name: this.last_name,

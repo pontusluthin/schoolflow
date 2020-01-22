@@ -60,7 +60,7 @@ export default {
 
     fetch_products: function () {
     axios
-    .get('http://localhost/Examensarbete/schoolflow/api')
+    .get('http://api.schoolflow.pontusluthin.se/api')
     .then(response => (this.products_content = response.data))
     },
 
