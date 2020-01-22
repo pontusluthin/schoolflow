@@ -98,8 +98,12 @@
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 import moment from 'moment';
+import Header from '../components/Header'
 export default {
    name: 'payment',
+   mixins: [
+     Header
+   ],
    computed: {
   
    },
@@ -159,7 +163,7 @@ export default {
        localStorage.removeItem('product')
           this.getLocalStorage() 
           this.fetch_single_product() 
-      
+          this.localStorage();
     },
 
   

@@ -41,8 +41,12 @@
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
 import axios from 'axios';
+import Header from '../components/Header.vue'
 export default {
   name: 'home',
+   mixins: [
+        Header
+    ],
   components: {
     
   },
@@ -66,6 +70,7 @@ export default {
 
     addProduct(product_id){    
       localStorage.setItem('product', product_id)
+      this.localStorage();
       
     },
 
@@ -76,7 +81,6 @@ export default {
    
   },
    mounted() {
-  
         this.fetch_products();
         this.getStorage();
     }

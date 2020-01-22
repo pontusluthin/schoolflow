@@ -13,6 +13,22 @@
   @media screen and (min-width: 768px) { 
     height: 65px;
   }
+
+  .product-in-cart-icon {
+    background-color: $primary-icon-color;
+    border-radius: 50%;
+    font-family: $secondary-font-title;
+    font-weight: bold;
+    color: black;
+    padding: 2px 6px;
+    position: absolute;
+    right: 0;
+    margin-right: 445px;
+    top: 0;
+    margin-top: 8px;
+    border: $hr-border;
+
+  }
   
   .schoolflow-logo {
     height: 45px;

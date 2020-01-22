@@ -8,7 +8,7 @@
         <font-awesome-icon class="menu-button cart" :icon="link.icon" />
       </router-link>
     </div>
-
+    <div class="product-in-cart-icon" id="product-in-cart-icon">{{ product_in_cart_icon }}</div>
     <font-awesome-icon class="menu-button" @click.prevent="openMenu" icon="bars" :class="{ 'hide-button' : isMobileMenuActive }"/>
     <font-awesome-icon @click.prevent="closeMenu" icon="times-circle" class="close-menu-button" :class="{ 'hide-button' : !isMobileMenuActive }"/>
 
@@ -44,6 +44,7 @@
 export default {
   data() {
     return {
+      product_in_cart_icon: '1',
       header_links: [
         {
           name: 'Varukorg', 
@@ -127,7 +128,20 @@ export default {
         this.$forceUpdate()
       }
 
+    },
+
+    localStorage () {
+      if (localStorage.getItem("product") === null) {
+        document.getElementById('product-in-cart-icon').style.display = 'none';
+        console.log('Ingen produkt tillagd')
+      }else {
+        document.getElementById('product-in-cart-icon').style.display = 'block'
+        console.log('Produkt tillagd')
+      }
     }
-  }
+  },
+  mounted() {
+    this.localStorage()
+  },
 }
 </script>
