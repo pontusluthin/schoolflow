@@ -126,6 +126,8 @@ export default {
       if (link.children != null) {
         this.openedItems[index] = !this.openedItems[index]
         this.$forceUpdate()
+      }else {
+        this.closeMenu()
       }
 
     },
