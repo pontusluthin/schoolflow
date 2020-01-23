@@ -43,7 +43,7 @@ export default {
       banner_title: 'Lär dig mer, något nytt eller spela för att det är kul',
       banner_sub_title: 'Schoolflow är digital plattform för elever och lärare i årskurs F-3 som fokuserar på att vidareutveckla elevernas fantastiska kunskaper, minska dokumentationen för lärare och hjälpa de elever som behöver extra stöd', 
       learn_more: 'Lär dig mer', 
-      learn_more_link: '/kurser', 
+      learn_more_link: '/arskurs-1', 
       read_more: 'Läs mer',
       courses: [
         {
