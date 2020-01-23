@@ -1,6 +1,7 @@
 <template>
   <div class="customer page">
     <div>
+      <div @click.prevent="redirectToLogin" class="logout-button"> Logga ut </div>
     <div class="title">Översikt för {{ user_data.first_name }}</div>
 
   
@@ -57,6 +58,7 @@
 </template>
 <script>
 import axios from 'axios';
+import router from '../router/index'
 
 export default {
   data() {
@@ -104,6 +106,15 @@ export default {
       this.user_id = customer_id
      console.log(this.user_id)
      this.update_customer_email()
+    },
+
+    redirectToLogin: function() {
+      this.user_data = null;
+
+      if(this.user_data === null){
+        router.push('/logga-in')
+      }
+
     }
   },
 

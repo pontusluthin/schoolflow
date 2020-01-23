@@ -17,13 +17,16 @@
       <input type="submit" class="login-submit-buttom"  @click.prevent="login" value="Logga in">
 
     </form>
-     <div class="error-modal">{{error_msg}}</div>
+      <div v-if="error_msg" class="error-bg-overlay"> </div>
+      <div v-if="error_msg" class="error-modal">
+        {{error_msg}}
+        <div class="close-modal-button" @click.prevent="closeModal" v-if="error_msg">OK</div>
+      </div>
   </div>
 </div>
 </template>
 <script>
 import axios from 'axios';
-//import router from '../router/index';
 
 
 
@@ -66,13 +69,17 @@ export default {
                           
                         })    
                         .catch((errors) => {    
-                            this.error_msg = 'Fel användarnamn eller lösenord, försök igen'
+                            this.error_msg = 'Ajdå! Något gick visst lite fel... användarnamnet eller lösenordet är felaktigt, försök igen'
                             console.log("Cannot log in")    
                             console.log(errors)
                         })   
                 }    
                 login()    
-    }
+      },
+
+      closeModal: function() {
+        this.error_msg = ''
+      }
     }
   }
 

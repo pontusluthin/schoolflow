@@ -86,5 +86,51 @@
         }
       }
     }
+
+    .error-bg-overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+      .error-modal {
+        font-family: $secondary-font-title;
+        font-weight: bold;
+        z-index: 1;
+        background-color: white;
+        padding: 5%;
+        position: absolute;
+        text-align: center;
+        font-size: $large-secondary-mobile-title;
+        border-radius: $border-radius;
+
+        @media screen and (min-width: 768px) { 
+          font-size: $large-desktop-text;
+        }
+
+        .close-modal-button {
+          margin-top: 30px;
+          background-color: $primary-button-color;
+          color: $secondary-text-color;
+          padding: 10px 20px;
+          border-radius: $border-radius;
+
+          @media screen and (min-width: 768px) { 
+            transition: ease-in-out 0.2s;
+            border: 2px solid transparent;
+            padding: 8px 15px;
+
+            &:hover {
+              border-color: $primary-button-color;
+              background-color: $secondary-text-color;
+              color: $primary-button-color;
+              cursor: pointer;
+            }
+          }
+        }
+      }
   }
 }
