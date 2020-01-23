@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <router-link class="offers-button" to="/prenumerationer">Till våra paket</router-link>
+    <router-link class="offers-button" to="/priser">Till våra paket</router-link>
   </div>
 </template>
 <script>
