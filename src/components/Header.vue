@@ -1,7 +1,7 @@
 <template>
 <div>
   <header class="header">
-    <router-link class="schoolflow-logo" to="/"><img src=".././assets/schoolflow_logo.png" alt="schoolflow logga"></router-link>
+    <router-link class="schoolflow-logo" @click.native="closeMenu" to="/"><img src=".././assets/schoolflow_logo.png" alt="schoolflow logga"></router-link>
     <div v-for="link in header_links" :key="link" @click.prevent="closeMenu">
       <router-link class="menu-button-wrapper" :class="link.class" :to="link.path" style="text-decoration:none">
         <div class="menu-button-name" >{{ link.name }}</div>
@@ -15,7 +15,7 @@
  </header>
 
     <nav class="menu" :class="{ 'show-menu' : isMobileMenuActive }">
-      <router-link to="/logga-in" class="log-in-menu-button">{{ log_in }}</router-link>
+      <router-link to="/logga-in" class="log-in-menu-button" @click.native="closeMenu">{{ log_in }}</router-link>
       <ul class="parent-list">
         <li v-for="(link, index) in links" :key="link" @click="collapseItem(index, link)" class="item">      
           <router-link :to="link.path" id="parent-link">
