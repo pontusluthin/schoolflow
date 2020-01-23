@@ -1,7 +1,7 @@
 <template>
 <div>
   <header class="header">
-    <img class="schoolflow-logo" src=".././assets/schoolflow_logo.png" alt="">
+    <router-link class="schoolflow-logo" to="/"><img src=".././assets/schoolflow_logo.png" alt="schoolflow logga"></router-link>
     <div v-for="link in header_links" :key="link" @click.prevent="closeMenu">
       <router-link class="menu-button-wrapper" :class="link.class" :to="link.path" style="text-decoration:none">
         <div class="menu-button-name" >{{ link.name }}</div>
