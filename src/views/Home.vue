@@ -49,72 +49,72 @@ export default {
         {
           image: require('../assets/images/swedish.png'),
           title: 'Svenska',
-          text: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.',
+          text: 'I svenskakursen får eleven utmana dig själv genom olika spel och lekar som är språkutvecklande. Innehåll: ',
           path:'/svenska',
           checkpoints: [
             {
               icon: 'check',
-              text: 'Purus Etiam Risus Lorem'
+              text: 'Ordklasser'
             },
             {
               icon: 'check',
-              text: 'Quam Aenean Condimentum'
+              text: 'Stavningsregler'
             },
             {
               icon: 'check',
-              text: 'Ligula Porta Vehicula'
+              text: 'Meningsbyggnad'
             },
             {
               icon: 'check',
-              text: 'Amet Tristique Euismod'
-            }
+              text: 'Ändelser/böjning av ord'
+            },
           ]
         },
         {
           image: require('../assets/images/english.png'),
           title: 'Engelska',
-          text: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.',
+          text: 'I engelskakursen får eleven lära sig grundläggande engelska genom spel och lekar som bland annat innehåller: ',
           path:'/engelska',
           checkpoints: [
             {
               icon: 'check',
-              text: 'Purus Etiam Risus Lorem'
+              text: 'Ordförråd'
             },
             {
               icon: 'check',
-              text: 'Quam Aenean Condimentum'
+              text: 'Meningsuppbyggnad'
             },
             {
               icon: 'check',
-              text: 'Ligula Porta Vehicula'
+              text: 'Uttal'
             },
             {
               icon: 'check',
-              text: 'Amet Tristique Euismod'
+              text: 'Stavningsregler'
             }
           ]
         },
               {
           image: require('../assets/images/math.png'),
-          title: 'Matte',
-          text: 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.',
+          title: 'Matematik',
+          text: 'I mattekursen så lär vi oss bland annat de fyra räknesätten genom spel och tester.',
           path:'/matte',
           checkpoints: [
             {
               icon: 'check',
-              text: 'Purus Etiam Risus Lorem'
+              text: 'De fyra räknesätten'
             },
             {
               icon: 'check',
-              text: 'Quam Aenean Condimentum'
+              text: 'Huvudräkning'
             },
             {
               icon: 'check',
-              text: 'Ligula Porta Vehicula'
+              text: 'Strategier'
             },
             {
               icon: 'check',
-              text: 'Amet Tristique Euismod'
+              text: 'Problemlösning'
             }
           ]
         }
@@ -126,7 +126,7 @@ export default {
       usps: [
         {
           image: require('../assets/images/studying-child.png'),
-          text: 'Anpassad uifrån årskurs och ämnen', 
+          text: 'Anpassad utifrån årskurs och ämnen', 
           class: 'first'
         },
         {

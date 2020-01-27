@@ -36,7 +36,7 @@ export default {
   data () {
     return {
       subject_title: 'Svenska', 
-      subject_sub_title: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
+      subject_sub_title: 'Lärande i det svenska språket.',
       
       subjects: [
         {
@@ -59,7 +59,7 @@ export default {
       subjects_info: [
         {
           image: require('../../assets/images/subjects/english.png'),
-          text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
+          text: 'Svenska är vårt grundläggande språk och lägger en grund för elvens framtida utveckling. Här kommer eleven att få spela ordlekar, skriva meningar, lära sig orklasser. Allt som är grunden för att eleven skall kunna behärska det svenska språket.'
 
         }
       ],
@@ -68,44 +68,41 @@ export default {
           first_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Ordförråd'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Olika övningar för att stimulera lärandet'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Meningsuppbyggnad'
             }
           ],
            second_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Automatisk stavningskontroll stavningskontroll'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: ' Ändelser/böjning av ord'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Över 200 olika övningar i all årskurser'
             }
           ],
            third_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Språkbruk'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Skapa unika anpassade övningar för elever eller klass'
             },
-            {
-              icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
-            }
+          
           ]
         }
       ]

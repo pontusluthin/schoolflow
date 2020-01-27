@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       course_title: 'Årskurs 2', 
-      course_sub_title: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
+      course_sub_title: 'Kanske nästa person som reser till Mars? ',
       
       courses: [
         {
@@ -67,7 +67,7 @@ export default {
       courses_info: [
         {
           image: require('../../assets/images/subjects/english.png'),
-          text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
+          text: 'I årskurs 2 lär sig eleven mer inom området svenska, engelska och matematik. Detta är en påbyggnad på årskurs 1 för att säkra fler färdigher. Det handlar om att gå mer in på djupet med t.ex. problemlösningar och meningsbyggnader.'
 
         }
       ],
@@ -91,43 +91,43 @@ export default {
           first_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Svenska, engelska och matematik'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Kunskapskontroller som skapas av läraren eller befintliga som är skapade utifrån skolverkets riktlinjer'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Tidsräkning, ha koll på hur lång tid det ta för eleverna att genomföra en uppgift.'
             }
           ],
            second_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Över 650 övningar, spel och lekar som främjar lärande och gör det roligare.'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Kan anpassas för en skola om det finns fler klasser av samma årskurs'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Skapa mindre tester för att säkerhetsställa så att eleven lär sig i rätt takt'
             }
           ],
            third_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Bra hjälpmedel som beskriver varje övning och vad för syfte den har'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Allt är baserat på kunskapskraven från skolverket'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Läraren ska kunna utgå från plattformen och inte använda den som ett extra verktyg som minskar tiden med eleverna'
             }
           ]
         }

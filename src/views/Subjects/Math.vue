@@ -35,8 +35,8 @@
 export default {
   data () {
     return {
-      subject_title: 'Matte', 
-      subject_sub_title: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
+      subject_title: 'Matematik', 
+      subject_sub_title: 'Siffror, plus, minus, det är något som alla har nytta av.',
       
       subjects: [
         {
@@ -59,7 +59,7 @@ export default {
       subjects_info: [
         {
           image: require('../../assets/images/subjects/english.png'),
-          text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
+          text: 'I ämnet matematik lär eleven sig att hantera de fyra olika grundläggande räknesätten, addition, subtration, multiplikation, division. Här finns spännande övningar anpassade för årskurs 1 - 3, allt ifrån att räkna hur många äpplen som existerar på marken till summan av olika större tal.'
 
         }
       ],
@@ -68,43 +68,43 @@ export default {
           first_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'De fyra räknesätten'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Huvudräkning'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Strategier'
             }
           ],
            second_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: ' Problemlösning'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Deltester och större slutprov'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Över 300 olika övningar i alla dess former'
             }
           ],
            third_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Målbild för vad eleven skall klara av'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Bra förklaringar till varje moment och övning'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Anpassad miljö för varje klass eller elev'
             }
           ]
         }

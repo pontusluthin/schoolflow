@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       course_title: 'Årskurs 1', 
-      course_sub_title: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
+      course_sub_title: 'Åk 1, fösta steget till lärande för livet.',
       
       courses: [
         {
@@ -67,7 +67,7 @@ export default {
       courses_info: [
         {
           image: require('../../assets/images/subjects/english.png'),
-          text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
+          text: 'Årskurs 1 är första riktiga steget där eleven lär sig grunden för hela skolgången. Målet på vår plattform är att läraren ska få lägga mer tid på elverna under lektionstid och att Schoolflow tar hand om dokumentationen samt säkerhetsställer att alla elever får den hjälp och kunskap som behövs'
 
         }
       ],
@@ -91,43 +91,43 @@ export default {
           first_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Svenska, engelska och matematik'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Kunskapskontroller som skapas av läraren eller befintliga som är skapade utifrån skolverkets riktlinjer'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Tidsräkning, ha koll på hur lång tid det ta för eleverna att genomföra en uppgift.'
             }
           ],
            second_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Över 650 övningar, spel och lekar som främjar lärande och gör det roligare.'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Kan anpassas för en skola om det finns fler klasser av samma årskurs'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Skapa mindre tester för att säkerhetsställa så att eleven lär sig i rätt takt'
             }
           ],
            third_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Bra hjälpmedel som beskriver varje övning och vad för syfte den har'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Allt är baserat på kunskapskraven från skolverket'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Läraren ska kunna utgå från plattformen och inte använda den som ett extra verktyg som minskar tiden med eleverna'
             }
           ]
         }

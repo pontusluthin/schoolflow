@@ -36,7 +36,7 @@ export default {
   data () {
     return {
       subject_title: 'Engelska', 
-      subject_sub_title: 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros.',
+      subject_sub_title: 'Att behärska internationell kommunikation är ett måste för framtiden.',
       
       subjects: [
         {
@@ -59,7 +59,7 @@ export default {
       subjects_info: [
         {
           image: require('../../assets/images/subjects/english.png'),
-          text: 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'
+          text: 'I ämnet engelska så lär sig eleven att både läsa och lyssna för att så småningom kunna börja kommunicera via engelska. Det är allt från glosor till enklare samtal, dialoger och meningsbyggnader'
 
         }
       ],
@@ -68,43 +68,43 @@ export default {
           first_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Bra förklaringar till varje övning och moment för att eleven lätt skall kunna förstå'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Meningsuppbyggnad'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Uttal'
             }
           ],
            second_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Grundpriciperna: tala, skriva och läsa'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Stavningsregler'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Glosövningar för att lätt kunna lära sig orden på engelska från svenska'
             }
           ],
            third_row: [
             {
               icon: 'check',
-              text: 'Euismod Ornare Vulputate'
+              text: 'Över 150 olika övningar, allt från memory till att skriva hela meningar'
             },
             {
               icon: 'check',
-              text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur.'
+              text: 'Ordförråd'
             },
             {
               icon: 'check',
-              text: 'Adipiscing Ornare Tristique Bibendum Sollicitudin'
+              text: 'Videor som instruerar korrekt uttal'
             }
           ]
         }
