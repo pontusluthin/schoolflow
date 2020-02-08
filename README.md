@@ -1,10 +1,10 @@
 <div align="center">
-    <img src="/src/assets/images/schoolflow_logo.png" width="500px">
+    <img src="/src/assets/images/Schoolflow-white-logo.png" width="500px">
 </div>
 
 # Project description
 
-!! This is a school exam project !!
+!! This is a schoolexam project !!
 
 Schoolflow is a template setup for subscription enviroment. Everything is included from adding a product to the cart to actually get a order confirm via third part service, [EmailJS](https://www.emailjs.com/).
 
@@ -17,11 +17,31 @@ Database: MySQL
 Service tools: [git](https://git-scm.com/), [npm](https://www.npmjs.com/), [VS Code](https://code.visualstudio.com/), [Webpack](https://webpack.js.org/)
 
 ## Project setup
+
+
+###
+
+### 1. Clone package from github
+
+SSH
+``` 
+git@github.com:pontusluthin/schoolflow.git
+```
+
+HTTPS 
+```
+https://github.com/pontusluthin/schoolflow.git
+```
+
+
+### 1. Install Node Package Modules
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 2. 
+
+###  Compiles and hot-reloads for development
 ```
 npm run serve
 ```
