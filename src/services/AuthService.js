@@ -1,3 +1,6 @@
+
+//AUTH key | NOT FINISHED! 
+
 import axios from 'axios';
 const url = 'http://localhost/Examensarbete/schoolflow/login/';
 export default {

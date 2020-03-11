@@ -1,5 +1,9 @@
+<!-- ABOUT US COMPONENT -->
+
 <template>
   <div>
-    om oss
+    Om oss
   </div>
 </template>
+
+<!-- ABOUT US COMPONENT END -->

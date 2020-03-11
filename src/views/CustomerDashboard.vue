@@ -1,10 +1,10 @@
+<!-- CUSTOMER DASHBOARD COMPONENT -->
+
 <template>
   <div class="customer page">
     <div>
       <div @click.prevent="redirectToLogin" class="logout-button"> Logga ut </div>
     <div class="title">Översikt för {{ user_data.first_name }}</div>
-
-  
     <div class="customer-info-wrapper">
       <div class="customer-name">
        {{ user_data.first_name}} {{ user_data.last_name }}
@@ -22,7 +22,7 @@
     <form class="change-form">
       <div class="form_title">Fakturaadress</div>
       <div>
-      <input class="field" type="text" v-model="user_data.email">
+        <input class="field" type="text" v-model="user_data.email">
       </div>
       <input type="submit" @click.prevent="save_email(user_data.customer_id)" class="save-button" value="Spara">
       <div class="form_sub_title">Fakturan skickas ut den 20:e varje månad och skall vara betald senast den 28:e. </div>
@@ -57,73 +57,73 @@
   </div>
 </template>
 <script>
-import axios from 'axios';
-import router from '../router/index'
+  import axios from 'axios';
+  import router from '../router/index'
 
-export default {
-  data() {
-    return {
-      user_data: null,
-      email: '',
-      user_id: '',
-    }
-  },
-
-  methods: {
-    fetch_single_customer: function () {
-       axios 
-      .get(`http://api.schoolflow.pontusluthin.se/customer/?email=${this.email}`)
-      .then((response) => {
-        this.user_data = response.data 
-        })
-    },
-
-    update_customer_email: function () {
-
-       let email = this.new_email   
-       let customer_id = this.user_id
-
-       
-      let customer_email = () => {    
-                    let data = {    
-                        email: email,    
-                        customer_id: customer_id  
-                    }    
-                    axios.put("http://api.schoolflow.pontusluthin.se/customer/", data)    
-                        .then((response) => {    
-                            console.log("Email är uppdaterad", response)  
-                          
-                        })    
-                        .catch((errors) => {    
-                            console.log("Email är inte uppdaterad")    
-                            console.log(errors)
-                        })   
-                }  
-                customer_email()  
-    },
-
-      save_email: function (customer_id) {
-      this.user_id = customer_id
-     console.log(this.user_id)
-     this.update_customer_email()
-    },
-
-    redirectToLogin: function() {
-      this.user_data = null;
-
-      if(this.user_data === null){
-        router.push('/logga-in')
+  export default {
+    data() {
+      return {
+        user_data: null,
+        email: '',
+        user_id: '',
       }
+    },
 
+    methods: {
+
+      //Get single customer info 
+      fetch_single_customer: function () {
+        axios 
+        .get(`http://api.schoolflow.pontusluthin.se/customer/?email=${this.email}`)
+        .then((response) => {
+          this.user_data = response.data 
+        })
+      },
+
+      //Customer email update function (NOT FINISHED!)
+      update_customer_email: function () {
+        let email = this.new_email
+        let customer_id = this.user_id
+        let customer_email = () => {
+          let data = {
+            email: email,
+            customer_id: customer_id
+          }    
+          axios
+          .put("http://api.schoolflow.pontusluthin.se/customer/", data)
+          .then((response) => {
+            console.log("Email är uppdaterad", response)
+          })
+          .catch((errors) => {
+            console.log("Email är inte uppdaterad")
+            console.log(errors)
+          })
+        }  
+        customer_email()
+      },
+
+      //Save email button function 
+      save_email: function (customer_id) {
+        this.user_id = customer_id
+        this.update_customer_email()
+      },
+
+      //Logout customer button
+      redirectToLogin: function() {
+        this.user_data = null;
+        if(this.user_data === null){
+          router.push('/logga-in')
+        }
+      }
+    },
+
+
+    //Update latest written email in sign in and get email from login form in login component. 
+    mounted() {
+      this.email = this.$route.params.email
+      this.fetch_single_customer()
     }
-  },
-
-
-
-  mounted() {
-    this.email = this.$route.params.email
-    this.fetch_single_customer()
-   
   }
-}
 </script>
+
+<!-- CUSTOMER DASHBOARD COMPONENT END -->

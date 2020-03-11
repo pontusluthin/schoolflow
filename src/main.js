@@ -26,11 +26,9 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 /* End Font Awesome */
 
-Vue.config.productionTip = false
-
-
 Vue.use(VueAxios, axios)
 
+// Render components 
 new Vue({
   router, 
   render: function (h) { return h(App) }

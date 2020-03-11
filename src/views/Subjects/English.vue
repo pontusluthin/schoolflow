@@ -1,3 +1,4 @@
+<!-- SUBJECT: ENGLISH COMPONENT-->
 <template>
   <div class="subject page">
     <div class="subject-paths-wrapper">
@@ -32,84 +33,85 @@
   </div>
 </template>
 <script>
-export default {
-  data () {
-    return {
-      subject_title: 'Engelska', 
-      subject_sub_title: 'Att behärska internationell kommunikation är ett måste för framtiden.',
-      
-      subjects: [
-        {
-          path: '/svenska',
-          name: 'Svenska', 
-          class: ''
-        },
-        {
-          path: '/matte',
-          name: 'Matte', 
-          class: 'border'
-        },
-         {
-          path: '/engelska',
-          name: 'Engelska',
-          class: 'highlite'
-        }
-      ],
+  export default {
+    data () {
+      return {
+        subject_title: 'Engelska', 
+        subject_sub_title: 'Att behärska internationell kommunikation är ett måste för framtiden.',
+        
+        subjects: [
+          {
+            path: '/svenska',
+            name: 'Svenska', 
+            class: ''
+          },
+          {
+            path: '/matte',
+            name: 'Matte', 
+            class: 'border'
+          },
+          {
+            path: '/engelska',
+            name: 'Engelska',
+            class: 'highlite'
+          }
+        ],
 
-      subjects_info: [
-        {
-          image: require('../../assets/images/subjects/english.png'),
-          text: 'I ämnet engelska så lär sig eleven att både läsa och lyssna för att så småningom kunna börja kommunicera via engelska. Det är allt från glosor till enklare samtal, dialoger och meningsbyggnader'
-
-        }
-      ],
-      usps: [
-        {
-          first_row: [
-            {
-              icon: 'check',
-              text: 'Bra förklaringar till varje övning och moment för att eleven lätt skall kunna förstå'
-            },
-            {
-              icon: 'check',
-              text: 'Meningsuppbyggnad'
-            },
-            {
-              icon: 'check',
-              text: 'Uttal'
-            }
-          ],
-           second_row: [
-            {
-              icon: 'check',
-              text: 'Grundpriciperna: tala, skriva och läsa'
-            },
-            {
-              icon: 'check',
-              text: 'Stavningsregler'
-            },
-            {
-              icon: 'check',
-              text: 'Glosövningar för att lätt kunna lära sig orden på engelska från svenska'
-            }
-          ],
-           third_row: [
-            {
-              icon: 'check',
-              text: 'Över 150 olika övningar, allt från memory till att skriva hela meningar'
-            },
-            {
-              icon: 'check',
-              text: 'Ordförråd'
-            },
-            {
-              icon: 'check',
-              text: 'Videor som instruerar korrekt uttal'
-            }
-          ]
-        }
-      ]
+        subjects_info: [
+          {
+            image: require('../../assets/images/subjects/english.png'),
+            text: 'I ämnet engelska så lär sig eleven att både läsa och lyssna för att så småningom kunna börja kommunicera via engelska. Det är allt från glosor till enklare samtal, dialoger och meningsbyggnader'
+          }
+        ],
+        usps: [
+          {
+            first_row: [
+              {
+                icon: 'check',
+                text: 'Bra förklaringar till varje övning och moment för att eleven lätt skall kunna förstå'
+              },
+              {
+                icon: 'check',
+                text: 'Meningsuppbyggnad'
+              },
+              {
+                icon: 'check',
+                text: 'Uttal'
+              }
+            ],
+            second_row: [
+              {
+                icon: 'check',
+                text: 'Grundpriciperna: tala, skriva och läsa'
+              },
+              {
+                icon: 'check',
+                text: 'Stavningsregler'
+              },
+              {
+                icon: 'check',
+                text: 'Glosövningar för att lätt kunna lära sig orden på engelska från svenska'
+              }
+            ],
+            third_row: [
+              {
+                icon: 'check',
+                text: 'Över 150 olika övningar, allt från memory till att skriva hela meningar'
+              },
+              {
+                icon: 'check',
+                text: 'Ordförråd'
+              },
+              {
+                icon: 'check',
+                text: 'Videor som instruerar korrekt uttal'
+              }
+            ]
+          }
+        ]
+      }
     }
   }
-}
 </script>
+
+<!-- SUBJECT: ENGLISH COMPONENT END -->

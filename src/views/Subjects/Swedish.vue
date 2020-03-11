@@ -1,3 +1,5 @@
+<!-- SUBJECT: SWEDISH COMPONENT-->
+
 <template>
   <div class="subject page">
     <div class="subject-paths-wrapper">
@@ -32,81 +34,82 @@
   </div>
 </template>
 <script>
-export default {
-  data () {
-    return {
-      subject_title: 'Svenska', 
-      subject_sub_title: 'Lärande i det svenska språket.',
-      
-      subjects: [
-        {
-          path: '/svenska',
-          name: 'Svenska', 
-          class: 'highlite'
-        },
-        {
-          path: '/matte',
-          name: 'Matte', 
-          class: 'border'
-        },
-         {
-          path: '/engelska',
-          name: 'Engelska',
-          class: ''
-        }
-      ],
+  export default {
+    data () {
+      return {
+        subject_title: 'Svenska', 
+        subject_sub_title: 'Lärande i det svenska språket.',
+        
+        subjects: [
+          {
+            path: '/svenska',
+            name: 'Svenska', 
+            class: 'highlite'
+          },
+          {
+            path: '/matte',
+            name: 'Matte', 
+            class: 'border'
+          },
+          {
+            path: '/engelska',
+            name: 'Engelska',
+            class: ''
+          }
+        ],
 
-      subjects_info: [
-        {
-          image: require('../../assets/images/subjects/english.png'),
-          text: 'Svenska är vårt grundläggande språk och lägger en grund för elvens framtida utveckling. Här kommer eleven att få spela ordlekar, skriva meningar, lära sig orklasser. Allt som är grunden för att eleven skall kunna behärska det svenska språket.'
-
-        }
-      ],
-      usps: [
-        {
-          first_row: [
-            {
-              icon: 'check',
-              text: 'Ordförråd'
-            },
-            {
-              icon: 'check',
-              text: 'Olika övningar för att stimulera lärandet'
-            },
-            {
-              icon: 'check',
-              text: 'Meningsuppbyggnad'
-            }
-          ],
-           second_row: [
-            {
-              icon: 'check',
-              text: 'Automatisk stavningskontroll stavningskontroll'
-            },
-            {
-              icon: 'check',
-              text: ' Ändelser/böjning av ord'
-            },
-            {
-              icon: 'check',
-              text: 'Över 200 olika övningar i all årskurser'
-            }
-          ],
-           third_row: [
-            {
-              icon: 'check',
-              text: 'Språkbruk'
-            },
-            {
-              icon: 'check',
-              text: 'Skapa unika anpassade övningar för elever eller klass'
-            },
-          
-          ]
-        }
-      ]
+        subjects_info: [
+          {
+            image: require('../../assets/images/subjects/english.png'),
+            text: 'Svenska är vårt grundläggande språk och lägger en grund för elvens framtida utveckling. Här kommer eleven att få spela ordlekar, skriva meningar, lära sig orklasser. Allt som är grunden för att eleven skall kunna behärska det svenska språket.'
+          }
+        ],
+        usps: [
+          {
+            first_row: [
+              {
+                icon: 'check',
+                text: 'Ordförråd'
+              },
+              {
+                icon: 'check',
+                text: 'Olika övningar för att stimulera lärandet'
+              },
+              {
+                icon: 'check',
+                text: 'Meningsuppbyggnad'
+              }
+            ],
+            second_row: [
+              {
+                icon: 'check',
+                text: 'Automatisk stavningskontroll stavningskontroll'
+              },
+              {
+                icon: 'check',
+                text: ' Ändelser/böjning av ord'
+              },
+              {
+                icon: 'check',
+                text: 'Över 200 olika övningar i all årskurser'
+              }
+            ],
+            third_row: [
+              {
+                icon: 'check',
+                text: 'Språkbruk'
+              },
+              {
+                icon: 'check',
+                text: 'Skapa unika anpassade övningar för elever eller klass'
+              },
+            
+            ]
+          }
+        ]
+      }
     }
   }
-}
 </script>
+
+<!-- SUBJECT: SWEDISH COMPONENT END -->

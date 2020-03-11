@@ -1,9 +1,9 @@
+<!-- PRODUCT COMPONENT -->
+
 <template>
   <div class="products page">
-   
     <div class="title">{{ title }}</div>
     <div class="sub-title">{{ sub_title }}</div>
-
     <div class="product-flex">
       <div class="product-content" v-for="p in products_content.data.slice(0,4)" :key="p">
         <div class="product-title"> {{ p.name }}</div>
@@ -20,68 +20,47 @@
         </div>
       </div>
     </div>
-      <div class="usp-content">
-        <div class="usp">
-         <!-- <div v-for="usp in usps.product" :key="usp">
-              
-              <div class="usp-title"> {{ usp.usp_title }} </div>
-                <div class="usp-wrapper">
-                  <div v-for="uspKey in usp.usps" :key="uspKey">
-                    <div class="usp-text" ><font-awesome-icon  class="usp-icon" :icon="uspKey.check_icon" />{{ uspKey.text }}</div>
-                  </div>
-                </div>
-           
-          </div>-->
-        </div>
-      </div>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-//import HelloWorld from '@/components/HelloWorld.vue'
-import axios from 'axios';
-import Header from '../components/Header.vue'
-export default {
-  name: 'home',
-   mixins: [
-        Header
-    ],
-  components: {
-    
-  },
-  data() {
+  import axios from 'axios';
+  import Header from '../components/Header.vue'
 
-    return {
-      products_content: null,
-      title: 'Prenumeration',
-      sub_title: 'Här kan kan du välja ett paket som passar dig, börja smått eller slå på stort. Ditt barn eller din elev kommer att utvecklas mer än du någonsin kunnat ana.',
-    }
-  },
+  export default {
+    name: 'home',
+    mixins: [
+          Header
+      ],
 
-  methods: {
-
-    fetch_products: function () {
-    axios
-    .get('http://api.schoolflow.pontusluthin.se/api')
-    .then(response => (this.products_content = response.data))
+    data() {
+      return {
+        products_content: null,
+        title: 'Prenumeration',
+        sub_title: 'Här kan kan du välja ett paket som passar dig, börja smått eller slå på stort. Ditt barn eller din elev kommer att utvecklas mer än du någonsin kunnat ana.',
+      }
     },
 
-    addProduct(product_id){    
-      localStorage.setItem('product', product_id)
-      this.localStorage();
+    methods: {
       
-    },
+      // Function to get all products from database 
+      fetch_products: function () {
+        axios
+        // GET REST API request
+        .get('http://api.schoolflow.pontusluthin.se/api')
+        .then(response => (this.products_content = response.data))
+      },
 
-    getStorage(){
-      let storage = localStorage.getItem('product')
-      console.log(storage)
+      // Function to add choosen clicket product id to local storage
+      addProduct(product_id){    
+        localStorage.setItem('product', product_id)
+        this.localStorage();
+      },
+    },
+    
+    mounted() {
+      this.fetch_products();
     }
-   
-  },
-   mounted() {
-        this.fetch_products();
-        this.getStorage();
-    }
-}
+  }
 </script>
+
+<!-- PRODUCT COMPONENT END -->

@@ -1,3 +1,5 @@
+<!-- PAGE HEADER -->
+
 <template>
 <div>
   <header class="header">
@@ -11,7 +13,6 @@
     <div class="product-in-cart-icon" id="product-in-cart-icon">{{ product_in_cart_icon }}</div>
     <font-awesome-icon class="menu-button" @click.prevent="openMenu" icon="bars" :class="{ 'hide-button' : isMobileMenuActive }"/>
     <font-awesome-icon @click.prevent="closeMenu" icon="times-circle" class="close-menu-button" :class="{ 'hide-button' : !isMobileMenuActive }"/>
-
  </header>
 
     <nav class="menu" :class="{ 'show-menu' : isMobileMenuActive }">
@@ -37,37 +38,36 @@
         </li> 
       </ul>
     </nav>
-    
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      product_in_cart_icon: '1',
-      header_links: [
+  export default {
+    data() {
+      return {
+        product_in_cart_icon: '1',
+        header_links: [
+          {
+            name: 'Varukorg', 
+            path: '/betalning', 
+            icon: 'shopping-cart', 
+            class: 'first'
+          },
+          {
+            name: 'Logga in', 
+            path: '/logga-in',
+            icon: 'key',
+            class: 'second'
+          }
+        ], 
+        log_in: 'Logga in',
+        isMobileMenuActive: false,
+        openedItems: {},
+        links: [
         {
-          name: 'Varukorg', 
-          path: '/betalning', 
-          icon: 'shopping-cart', 
-          class: 'first'
-        },
-        {
-          name: 'Logga in', 
-          path: '/logga-in',
-          icon: 'key',
-          class: 'second'
-        }
-      ], 
-      log_in: 'Logga in',
-      isMobileMenuActive: false,
-      openedItems: {},
-      links: [
-       {
           path: '/priser',
           link_title: 'Priser'
-       },
-       {
+        },
+        {
           path: '',
           link_title: 'Årskurser',
           children: [
@@ -84,66 +84,73 @@ export default {
               link_title: 'Årskurs 3'
             }
           ]
-       },
-       {
-          path: '',
-          link_title: 'Ämnen',
-          children: [
-            {
-              path: '/svenska',
-              link_title: 'Svenska'
-            },
-            {
-              path: '/engelska',
-              link_title: 'Engelska'
-            },
-            {
-              path: '/matte',
-              link_title: 'Matte'
-            }
-          ]
-       },
-       {
+        },
+        {
+            path: '',
+            link_title: 'Ämnen',
+            children: [
+              {
+                path: '/svenska',
+                link_title: 'Svenska'
+              },
+              {
+                path: '/engelska',
+                link_title: 'Engelska'
+              },
+              {
+                path: '/matte',
+                link_title: 'Matte'
+              }
+            ]
+        },
+        {
           path: '/om-oss',
           link_title: 'Om oss'
-       },
-       {
+        },
+        {
           path: '/kontakt',
           link_title: 'Kontakt'
-       }
-      ]
-    }
-  },
-  methods: {
-    openMenu: function() {
-      this.isMobileMenuActive = !this.isMobileMenuActive
-    },
-    closeMenu: function() {
-     this.isMobileMenuActive = false
-    },
-    collapseItem(index, link) {
-
-      if (link.children != null) {
-        this.openedItems[index] = !this.openedItems[index]
-        this.$forceUpdate()
-      }else {
-        this.closeMenu()
+        }
+        ]
       }
+    },
+    methods: {
 
+      // Open main menu with click on open button
+      openMenu: function() {
+        this.isMobileMenuActive = !this.isMobileMenuActive
+      },
+
+      // Close main menu with click on close button
+      closeMenu: function() {
+      this.isMobileMenuActive = false
+      },
+
+      // Open and close submenus
+      collapseItem( index, link ) {
+        if ( link.children != null ) {
+          this.openedItems[ index ] = !this.openedItems[ index ]
+          this.$forceUpdate()
+        }else {
+          this.closeMenu()
+        }
+      },
+
+      //Show value if product added to cart
+      localStorage () {
+        if ( localStorage.getItem( "product" ) === null ) {
+          document.getElementById( 'product-in-cart-icon' ).style.display = 'none';
+        }else {
+          document.getElementById( 'product-in-cart-icon' ).style.display = 'block'
+        }
+      }
     },
 
-    localStorage () {
-      if (localStorage.getItem("product") === null) {
-        document.getElementById('product-in-cart-icon').style.display = 'none';
-        console.log('Ingen produkt tillagd')
-      }else {
-        document.getElementById('product-in-cart-icon').style.display = 'block'
-        console.log('Produkt tillagd')
-      }
-    }
-  },
-  mounted() {
-    this.localStorage()
-  },
-}
+    //Render functions if they update
+    mounted() {
+      this.localStorage()
+    },
+  }
 </script>
+
+<!-- PAGE HEADER END -->

@@ -1,3 +1,5 @@
+<!-- SUBJECT: MATH COMPONENT-->
+
 <template>
   <div class="subject page">
     <div class="subject-paths-wrapper">
@@ -32,84 +34,84 @@
   </div>
 </template>
 <script>
-export default {
-  data () {
-    return {
-      subject_title: 'Matematik', 
-      subject_sub_title: 'Siffror, plus, minus, det är något som alla har nytta av.',
-      
-      subjects: [
-        {
-          path: '/svenska',
-          name: 'Svenska', 
-          class: ''
-        },
-        {
-          path: '/matte',
-          name: 'Matte', 
-          class: 'border highlite'
-        },
-         {
-          path: '/engelska',
-          name: 'Engelska',
-          class: ''
-        }
-      ],
+  export default {
+    data () {
+      return {
+        subject_title: 'Matematik', 
+        subject_sub_title: 'Siffror, plus, minus, det är något som alla har nytta av.',
+        
+        subjects: [
+          {
+            path: '/svenska',
+            name: 'Svenska', 
+            class: ''
+          },
+          {
+            path: '/matte',
+            name: 'Matte', 
+            class: 'border highlite'
+          },
+          {
+            path: '/engelska',
+            name: 'Engelska',
+            class: ''
+          }
+        ],
 
-      subjects_info: [
-        {
-          image: require('../../assets/images/subjects/english.png'),
-          text: 'I ämnet matematik lär eleven sig att hantera de fyra olika grundläggande räknesätten, addition, subtration, multiplikation, division. Här finns spännande övningar anpassade för årskurs 1 - 3, allt ifrån att räkna hur många äpplen som existerar på marken till summan av olika större tal.'
-
-        }
-      ],
-      usps: [
-        {
-          first_row: [
-            {
-              icon: 'check',
-              text: 'De fyra räknesätten'
-            },
-            {
-              icon: 'check',
-              text: 'Huvudräkning'
-            },
-            {
-              icon: 'check',
-              text: 'Strategier'
-            }
-          ],
-           second_row: [
-            {
-              icon: 'check',
-              text: ' Problemlösning'
-            },
-            {
-              icon: 'check',
-              text: 'Deltester och större slutprov'
-            },
-            {
-              icon: 'check',
-              text: 'Över 300 olika övningar i alla dess former'
-            }
-          ],
-           third_row: [
-            {
-              icon: 'check',
-              text: 'Målbild för vad eleven skall klara av'
-            },
-            {
-              icon: 'check',
-              text: 'Bra förklaringar till varje moment och övning'
-            },
-            {
-              icon: 'check',
-              text: 'Anpassad miljö för varje klass eller elev'
-            }
-          ]
-        }
-      ]
+        subjects_info: [
+          {
+            image: require('../../assets/images/subjects/english.png'),
+            text: 'I ämnet matematik lär eleven sig att hantera de fyra olika grundläggande räknesätten, addition, subtration, multiplikation, division. Här finns spännande övningar anpassade för årskurs 1 - 3, allt ifrån att räkna hur många äpplen som existerar på marken till summan av olika större tal.'
+          }
+        ],
+        usps: [
+          {
+            first_row: [
+              {
+                icon: 'check',
+                text: 'De fyra räknesätten'
+              },
+              {
+                icon: 'check',
+                text: 'Huvudräkning'
+              },
+              {
+                icon: 'check',
+                text: 'Strategier'
+              }
+            ],
+            second_row: [
+              {
+                icon: 'check',
+                text: ' Problemlösning'
+              },
+              {
+                icon: 'check',
+                text: 'Deltester och större slutprov'
+              },
+              {
+                icon: 'check',
+                text: 'Över 300 olika övningar i alla dess former'
+              }
+            ],
+            third_row: [
+              {
+                icon: 'check',
+                text: 'Målbild för vad eleven skall klara av'
+              },
+              {
+                icon: 'check',
+                text: 'Bra förklaringar till varje moment och övning'
+              },
+              {
+                icon: 'check',
+                text: 'Anpassad miljö för varje klass eller elev'
+              }
+            ]
+          }
+        ]
+      }
     }
   }
-}
 </script>
+<!-- SUBJECT: ENGLISH COMPONENT END -->

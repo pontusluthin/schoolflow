@@ -1,7 +1,10 @@
 <template>
+
+  <!-- Endast en mall, inget som ska granskas -->
+
   <div class="hello">
     <h2 class="test">{{ all_products_title }}</h2>
-    <!-- Visar alla produkter -->
+    <!-- Show all products -->
         <!-- Skriv så @click = "delete_product(product.product_id)" som nedan
       som jag sa att delete_product() anropas direkt var inte rätt i denna sammanhang.
       click anropar delete_product(product.product_id) det. -->
@@ -13,7 +16,7 @@
        <button @click="update_product(product.product_id)">Edit</button>
     </div>
  
-    <!-- Visar en produkt-->
+    <!-- Show one product-->
     <h2>{{ single_product_title }}</h2>
     <div style="background-color:white;">
       {{ single_product.data.product_name }}

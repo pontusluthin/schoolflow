@@ -1,3 +1,5 @@
+<!-- PAGE FOOTER -->
+
 <template>
   <footer class="footer">
     <BackToTop visibleoffset="50" bottom="50px" right="50px">
@@ -23,40 +25,42 @@
   </footer>
 </template>
 <script>
-import BackToTop from 'vue-backtotop'
-export default {
-  data() {
-    return {
-      contact_info: [
-        {
-          info: '073-831 44 44'
-        },
-        {
-          info: 'kontakt@schoolflow.se'
-        }
-      ],
-      copyright_info: '© Copyright Schoolflow AB 2019',
-      links: [
-        {
+  import BackToTop from 'vue-backtotop'
+  export default {
+    data() {
+      return {
+        contact_info: [
+          {
+            info: '073-831 44 44'
+          },
+          {
+            info: 'kontakt@schoolflow.se'
+          }
+        ],
+        copyright_info: '© Copyright Schoolflow AB 2019',
+        links: [
+          {
             path: '/prenumerationer',
             link_title: 'Prenumerationer'
-        },
-        {
+          },
+          {
             path: '/arskurser',
             link_title: 'Årskurser',
-        },
-        {
+          },
+          {
             path: '/amnen',
             link_title: 'Ämnen',
-        },
-        {
+          },
+          {
             path: '/om-oss',
             link_title: 'Om oss'
-        }
-      ],
-      back_to_top_button: 'Tillbaka till toppen'
-    }
-  }, 
-  components: { BackToTop }
-}
+          }
+        ],
+        back_to_top_button: 'Tillbaka till toppen'
+      }
+    }, 
+    components: { BackToTop }
+  }
 </script>
+
+<!-- PAGE FOOTER END -->

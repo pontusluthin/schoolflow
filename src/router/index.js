@@ -1,3 +1,5 @@
+/* MENU ROUTES */
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
@@ -14,100 +16,96 @@ const routes = [
   {
     path: '/priser',
     name: 'products',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Products.vue')
+      return import( '../views/Products.vue' )
     }
   },
   {
     path: '/om-oss',
     name: 'about',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
+      return import( '../views/About.vue' )
     }
   },
   {
     path: '/kontakt',
     name: 'contact',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Contact.vue')
+      return import( '../views/Contact.vue' )
     }
   },
   {
     path: '/betalning',
     name: 'payment',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/PaymentPage.vue')
-    }/*,   
-    meta: {
-      requiresAuth: true,
-    }*/
+      return import( '../views/Checkout.vue' )
+    }
   },
   {
     path: '/svenska',
     name: 'swedish',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Subjects/Swedish.vue')
+      return import( '../views/Subjects/Swedish.vue' )
     }
   },
   {
     path: '/matte',
     name: 'math',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Subjects/Math.vue')
+      return import( '../views/Subjects/Math.vue' )
     }
   },
   {
     path: '/engelska',
     name: 'english',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Subjects/English.vue')
+      return import( '../views/Subjects/English.vue' )
     }
   },
   {
     path: '/arskurs-1',
     name: 'course_one',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Courses/CourseOne.vue')
+      return import( '../views/Courses/CourseOne.vue' )
     }
   },
   {
     path: '/arskurs-2',
     name: 'course_two',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Courses/CourseTwo.vue')
+      return import( '../views/Courses/CourseTwo.vue' )
     }
   },
   {
     path: '/arskurs-3',
     name: 'course_three',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Courses/CourseThree.vue')
+      return import( '../views/Courses/CourseThree.vue' )
     }
   },
   {
     path: '/inloggad',
     name: 'customer_login',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/CustomerLogin.vue')
+      return import( '../views/CustomerDashboard.vue' )
     }
   },
   {
     path: '/logga-in',
     name: 'login',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/Login.vue')
+      return import( '../views/Login.vue' )
     }
   }
 ]
 
+// Remove # from URL 
 const router = new VueRouter({
-  mode: 'history', // Tar bort # från URL 
+  mode: 'history', 
   routes
 })
 
+// Login function
 router.beforeEach((to, from, next) => {
   if (to.matched.some(route => route.meta.requiresAuth)) {
     if (Auth.currentUser) {
@@ -120,3 +118,5 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router
+
+/* MENU ROUTES END */
