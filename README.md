@@ -14,6 +14,11 @@ Frontend: [Vue](https://vuejs.org/), [SCSS](https://sass-lang.com/documentation/
 Backend: [PHP](https://www.php.net/), REST API
 Database: MySQL
 
+Versions:
+PHP: 7.4.1
+Vue: 2.6.11
+SCSS/SASS: 1.24.0
+
 Service tools: [git](https://git-scm.com/), [npm](https://www.npmjs.com/), [VS Code](https://code.visualstudio.com/), [Webpack](https://webpack.js.org/)
 
 ## Project setup
@@ -39,7 +44,16 @@ https://github.com/pontusluthin/schoolflow.git
 npm install
 ```
 
-### 2. 
+### 2.
+
+### Installing packages
+
+```
+npm install @firebase/auth @fortawesome/fontawesome-svg-core @fortawesome/free-brands-svg-icons @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome axios emailjs-com firebase moment vue vue-axios vue-backtop vue-router @vue/cli-plugin-eslint @vue/cli-plugin-router @vue/cli-service babel-eslint eslint eslint-plugin-vue
+sass sass-loader style-resources-loader vue-cli-plugin-style-resources-loader vue-template-compiler
+```
+
+### 3.
 
 ###  Compiles and hot-reloads for development
 ```
@@ -54,13 +68,6 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Installing packages
-
-```
-npm install @firebase/auth @fortawesome/fontawesome-svg-core @fortawesome/free-brands-svg-icons @fortawesome/free-solid-svg-icons @fortawesome/vue-fontawesome axios emailjs-com firebase moment vue vue-axios vue-backtop vue-router @vue/cli-plugin-eslint @vue/cli-plugin-router @vue/cli-service babel-eslint eslint eslint-plugin-vue
-sass sass-loader style-resources-loader vue-cli-plugin-style-resources-loader vue-template-compiler
 ```
 
 ### File structure 
