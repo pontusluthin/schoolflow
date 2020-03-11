@@ -58,8 +58,9 @@
       display: flex;
       flex-direction: column;
       padding-bottom: 0px;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      min-height: 700px;
     
     }
 
@@ -90,7 +91,9 @@
     .product-wrapper {
       border-left: $hr-border;
       border-right: $hr-border;
-      display: none;
+      display: block;
+      margin-top: 40px;
+      margin-bottom: 30px;
 
       @media screen and (min-width: 768px) { 
         display: flex;
@@ -101,6 +104,8 @@
         justify-content: center;
         width: 90%;
         padding-bottom: 60px;
+        margin-top: 0;
+        margin-bottom: 0;
 
         &.second-border {
           border-left: $hr-border;
@@ -135,8 +140,14 @@
       }
 
       .price-wrapper {
-        position: absolute;
-        margin-top: 30px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+       
+        @media screen and (min-width: 768px) { 
+          position: absolute;
+          margin-top: 90px;
+          margin-bottom: 0;
+        }
        
         .product-price {
           font-family: $secondary-font-title;

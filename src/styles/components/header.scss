@@ -23,11 +23,14 @@
     padding: 2px 6px;
     position: absolute;
     right: 0;
-    margin-right: 445px;
+    margin-right: 465px;
     top: 0;
     margin-top: 8px;
     border: $hr-border;
 
+    @media screen and (min-width: 1900px) { 
+      margin-right: 520px;
+    }
   }
   
   .schoolflow-logo {
@@ -44,7 +47,10 @@
 
       @media screen and (min-width: 768px) { 
         margin-right: 20px;
-        margin-left: 820px;
+        margin-left: 60rem;
+      }
+      @media screen and (min-width: 1900px) { 
+        margin-left: 90rem;
       }
     }
 

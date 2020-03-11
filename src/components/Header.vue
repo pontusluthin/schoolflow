@@ -17,7 +17,7 @@
     <nav class="menu" :class="{ 'show-menu' : isMobileMenuActive }">
       <router-link to="/logga-in" class="log-in-menu-button" @click.native="closeMenu">{{ log_in }}</router-link>
       <ul class="parent-list">
-        <li v-for="(link, index) in links" :key="link" @click="collapseItem(index, link)" class="item">      
+        <li v-for="(link, index) in links" :key="link" @click="collapseItem(index, link)" class="item">
           <router-link :to="link.path" id="parent-link">
           <p class="item-name">
             {{ link.link_title }}

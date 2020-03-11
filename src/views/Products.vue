@@ -7,7 +7,7 @@
     <div class="product-flex">
       <div class="product-content" v-for="p in products_content.data.slice(0,4)" :key="p">
         <div class="product-title"> {{ p.name }}</div>
-        <div class="product-wrapper" >
+        <div class="product-wrapper">
           <div class="flex-wrapper">
             <div class="product-text">{{ p.description }}</div>
             <div class="price-wrapper">
@@ -55,8 +55,7 @@ export default {
     return {
       products_content: null,
       title: 'Prenumeration',
-      sub_title: 'Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.',
-     
+      sub_title: 'Här kan kan du välja ett paket som passar dig, börja smått eller slå på stort. Ditt barn eller din elev kommer att utvecklas mer än du någonsin kunnat ana.',
     }
   },
 
