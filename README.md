@@ -10,11 +10,12 @@ Schoolflow is a template setup for subscription enviroment. Everything is includ
 
 ## Tools
 
-Frontend: [Vue](https://vuejs.org/), [SCSS](https://sass-lang.com/documentation/syntax), [EmailJS](https://www.emailjs.com/), [Moment.js](https://momentjs.com/)
+Frontend: [Vue](https://vuejs.org/), [SCSS](https://sass-lang.com/documentation/syntax), [EmailJS](https://www.emailjs.com/), [Moment.js](https://momentjs.com/)<br />
 Backend: [PHP](https://www.php.net/), REST API
+<br />
 Database: MySQL
 
-Versions:
+Versions:<br />
 PHP: 7.4.1 <br />
 Vue: 2.6.11 <br />
 SCSS/SASS: 1.24.0 <br />
