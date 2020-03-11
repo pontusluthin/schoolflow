@@ -41,7 +41,6 @@ HTTPS
 https://github.com/pontusluthin/schoolflow.git
 ```
 
-
 ### 1. Install Node Package Modules
 ```
 npm install
@@ -75,8 +74,16 @@ npm run lint
 
 ### File structure 
 
+This was how the file structure was set before I began to code
+
 <div align="center">
     <img src="/documentation/images/file_structure.png" width="880px">
+</div>
+
+### Database scheme 
+
+<div align="center">
+    <img src="/documentation/database_scheme/database_scheme.png" width="880px">
 </div>
 
 ### Customize configuration
