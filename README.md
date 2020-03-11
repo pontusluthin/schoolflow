@@ -19,6 +19,8 @@ Versions:<br />
 PHP: 7.4.1 <br />
 Vue: 2.6.11 <br />
 SCSS/SASS: 1.24.0 <br />
+Moment: 2.24.0 <br />
+EmailJS: 2.4.1 <br />
 
 Service tools: [git](https://git-scm.com/), [npm](https://www.npmjs.com/), [VS Code](https://code.visualstudio.com/), [Webpack](https://webpack.js.org/)
 
