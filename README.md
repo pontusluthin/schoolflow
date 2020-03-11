@@ -15,9 +15,9 @@ Backend: [PHP](https://www.php.net/), REST API
 Database: MySQL
 
 Versions:
-PHP: 7.4.1
-Vue: 2.6.11
-SCSS/SASS: 1.24.0
+PHP: 7.4.1 <br />
+Vue: 2.6.11 <br />
+SCSS/SASS: 1.24.0 <br />
 
 Service tools: [git](https://git-scm.com/), [npm](https://www.npmjs.com/), [VS Code](https://code.visualstudio.com/), [Webpack](https://webpack.js.org/)
 
